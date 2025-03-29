@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital - ElectroKichel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: linear-gradient(135deg, red, blue);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        .logo {
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+        .media {
+            margin-top: 15px;
+        }
+        .media img, .media video {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .contact {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="logo.png" alt="ElectroKichel Logo" class="logo">
+        <h1>ElectroKichel</h1>
+        <p>Soluciones en tecnología</p>
+        <div class="contact">
+            <p>📞 3005926686</p>
+        </div>
+        <div class="social-icons">
+            <a href="#" target="_blank">🔵 Facebook</a>
+            <a href="https://wa.me/3005926686" target="_blank">🟢 WhatsApp</a>
+        </div>
+        <div class="media">
+            <h3>Galería</h3>
+            <img src="foto1.jpg" alt="Imagen de ElectroKichel">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+    </div>
+</body>
+</html>
