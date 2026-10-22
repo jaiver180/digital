@@ -2,20 +2,15 @@
 
 Complemento de la especificación principal (`../README.md`, versión 6.7). Aquí está **solo lo que cambia o se agrega** en la versión **9.0 GOLD KING** (`com.domotronicas.vgheditor`, versionCode 23).
 
-> **Qué archivos llegaron.** Para esta versión no recibí los `classes*.dex`, así que no hubo código para decompilar. El documento se basa en:
-> - `AndroidManifest.xml`, decodificado en `data/AndroidManifest.v9.decodificado.xml`;
-> - `i18n.tsv`: los 1885 textos de la interfaz en español, inglés y portugués;
-> - `autoscan_modelos_samsung.txt` y `autoscan_firmas.txt` (este último vacío, solo trae el encabezado);
-> - `index.html` del módulo de facturas (sin `js/app.js` ni `js/diagnosticos.js`);
-> - los archivos de versión de librerías y Gradle.
->
-> Lo que se deduce de los textos de la interfaz va marcado como **(deducido)**. Para conocer los algoritmos exactos de los módulos nuevos hacen falta los `.dex`.
+**Fuentes**: los 15 `classes*.dex` decompilados con jadx (293 clases de la app), `AndroidManifest.xml`, `resources.arsc`, `i18n.tsv`, `autoscan_modelos_samsung.txt`, `autoscan_firmas.txt` e `index.html` del módulo de facturas.
 
-Mismas reglas que en la 6.7: escribe tu propio código, con tu propia marca. No se incluye nada sobre cómo saltar la licencia.
+**No llegaron**: `assets/facturas/js/app.js` y `js/diagnosticos.js`, que tienen la lógica interna del formulario de facturas. Lo de esa parte que sale del HTML va marcado como **(deducido)**.
+
+Mismas reglas que en la 6.7: escribe tu propio código, con tu propia marca. No se incluye nada sobre cómo saltar la licencia (la clase nueva `LicenseControl` no se documenta).
 
 ---
 
-## 1. Qué cambió en el manifiesto
+## 1. Qué cambió en el manifiesto y la compilación
 
 | | 6.7 | 9.0 GOLD KING |
 |---|---|---|
@@ -23,125 +18,180 @@ Mismas reglas que en la 6.7: escribe tu propio código, con tu propia marca. No 
 | Permisos | — | **sin cambios** |
 | `debuggable` | true | **true** (sigue siendo una compilación debug) |
 
-**Pantallas nuevas**
+**Pantallas nuevas**: `autoscan.AutoScanSamsungActivity`, `facturas.FacturasActivity`, `hexeditor.HexEditorActivity`, `panelid.PanelIdIcSonyActivity`, `tvtester.TvTesterActivity` y `tvtester.TvTesterFullscreenActivity` (horizontal, `screenOrientation=6`).
 
-| Activity | Función |
-|---|---|
-| `autoscan.AutoScanSamsungActivity` | Autoscan: identifica el modelo Samsung a partir de un .bin |
-| `facturas.FacturasActivity` | Órdenes de servicio y facturación (WebView con `index.html`) |
-| `hexeditor.HexEditorActivity` | Editor hexadecimal completo, que lee del archivo o del chip |
-| `panelid.PanelIdIcSonyActivity` | Copia del Panel ID (EEPROM 24Cxx) del panel original al de reemplazo (Sony) |
-| `tvtester.TvTesterActivity` | Generador de señales de prueba |
-| `tvtester.TvTesterFullscreenActivity` | La señal a pantalla completa, en horizontal |
-
-**Versiones de compilación detectadas**
+**Versiones de compilación**
 
 | Componente | Versión |
 |---|---|
 | Android Gradle Plugin | 8.5.2 |
 | `androidx.activity` (+ `-ktx`, `-compose`) | 1.9.1 |
 | `androidx.appcompat` (+ `-resources`) | 1.7.0 |
-| `androidx.compose.animation` (+ `-core`) | 1.6.8 (BOM 2024.06.00) |
+| `androidx.compose.animation` (+ `-core`) | 1.6.8 |
 | `annotation-experimental` | 1.4.0 |
 | `autofill`, `cardview` | 1.0.0 |
 
-Los textos mencionan también **una versión para PC**:
-- usa `CH341DLL(A64).DLL` (el driver CH341PAR de WCH) en una carpeta `driver_dll`;
-- su módulo de IA está en `core/gemini_assistant.py`, así que esa versión está hecha en **Python**;
-- su licencia es "una por PC".
+**SharedPreferences que usa**: `adb_keypair`, `dy_license_control`, `dy_locale_prefs`, `facturas_domotronicas_prefs`, `gemini_assistant_prefs` y `secure_license_prefs`.
+
+> **Versión para PC.** `i18n.tsv` es compartido con una versión para Windows hecha en **Python**: usa `CH341DLL(A64).DLL` (driver CH341PAR) y su módulo de IA está en `core/gemini_assistant.py`. Hay textos que **solo existen en la versión de PC** y no tienen código en el APK:
+> - ACTIVAR/DESACTIVAR AUTOSCAN (314/413);
+> - "Lectura SPI/I2C inestable";
+> - "CS probado en …";
+> - "ESCANEO I2C: responden …";
+> - el manejo de teclas de las señales de prueba con clic derecho, AvPág, etc.
 
 ---
 
 ## 2. Autoscan Samsung
 
-**Para qué sirve**: abres un `.bin` de un T-CON Samsung y te dice **con qué modelo de la lista** se modifica VGH/VGL. **No modifica el archivo.** Después el usuario va al Editor Parche Samsung o al Editor VGH/VGL con ese modelo.
+Clases: `autoscan/ModelDatabase`, `BinScanner`, `FingerprintStore` y `AutoScanSamsungActivity`.
 
-### 2.1 Lista de modelos
+**Para qué sirve**: abres un `.bin` de un T-CON Samsung y te dice **con qué modelo de la lista** se modifica VGH/VGL. No modifica el archivo.
 
-`data/autoscan_modelos_y_grupos.json` tiene **159 entradas**, en el mismo formato que la 6.7:
+### 2.1 Lista de modelos y grupos
 
-```
-{"MODELO", base_main, vgh_pos, vgl_pos, checksum, base_check, vgh_chk_pos, vgl_chk_pos}
-```
-
-Diferencias con la base de la 6.7:
-- **Modelos nuevos**: `QN55Q60BAG`, `QN50Q65BAKXZL`, `UN55TU7020G`.
-- **Modelo con dos opciones**: `UN50DU7700` aparece dos veces, una con base `0x06F000` (checksum en `0x06F160`) y otra con `0x04F000`. Es un caso de **ESCOGER**.
-- **Modelo que ya no está**: `CS601C TCOM ST4251B05-2C-1`, que es I2C; el autoscan solo cubre SPI.
-
-**Grupos.** Los modelos se agrupan por la combinación (dirección base + posiciones + checksum), y modelos distintos que comparten combinación **se modifican igual**. Salen **19 grupos** (todos están en el JSON):
-
-| Grupo | base_main | VGH | VGL | Checksum | Modelos |
-|---|---|---|---|---|---|
-| 1 | 0x04F000 | 0x0D | 0x0E | 0x04F160 (+3, +4) | 32 (AU7000, CU7000, DU7000…) |
-| 2 | 0x041550 | 0x04 | 0x0B | — | 24 (Q60A/B/C, AU8000…) |
-| 3 | 0x0B1750 | 0x08 | 0x0F | — | 14 (TU8000…) |
-| 4 | 0x0CF000 | 0x0D | 0x0E | 0x0CF020 (+4, +5) | 14 (TU7000/7020…) |
-| 5 | 0x0B1590 | 0x0A | 0x08 | — | 12 (NU7100…) |
-| 6 | 0x0C1590 | 0x0A | 0x08 | — | 12 (MU6100…) |
-| 7 | 0x04F000 | 0x0D | 0x0E | 0x04F160 (+3, **+0x0B**) | 10 (variantes "30V") |
-| 8 a 19 | … | | | | 1 a 7 cada uno |
-
-Los grupos 1 y 7 tienen las mismas direcciones y solo se diferencian en la posición del checksum de VGL. Con los bytes del archivo no siempre se pueden distinguir, por eso existe "ESCOGER" (25V/30V).
-
-### 2.2 Cómo decide (deducido de los textos de ayuda)
-
-> "CÓMO DECIDE (sin adivinar): firma de un BIN real guardado como referencia, modelo o serie en el nombre del archivo, o modelo escrito dentro del BIN."
-
-Algoritmo propuesto para tu app:
-
-1. **Filtrar los grupos válidos.** Un grupo es válido para este archivo si:
-   - todas sus direcciones (`base_main + vgh_pos`, `base_main + vgl_pos` y, si tiene, las del checksum) caen dentro del tamaño del archivo; si no, aparece el aviso *"Las direcciones de este modelo caen fuera del tamaño real del archivo"*;
-   - el byte de VGH está en la tabla VGH y el de VGL en la tabla VGL (tablas globales de la 6.7). La interfaz muestra `VÁLIDO VGH=… VGL=…`;
-   - opcionalmente, el bloque no es todo `0xFF` ni todo `0x00`.
-2. **Desempatar**, en este orden de prioridad:
-   1. **Firma guardada**: los 16 bytes desde `base_main` (y, si existe, una segunda copia de 16 bytes) coinciden con una firma de referencia → **EXACTO**.
-   2. **Modelo en el nombre del archivo** (por ejemplo `UN55RU7300.bin`), comparando sin distinguir mayúsculas → EXACTO.
-   3. **Serie en el nombre** (`TU7000`, `AU8000`, `RU7100`…) → limita los candidatos a los grupos de esa serie.
-   4. **Modelo escrito dentro del BIN**: buscar en el archivo, como texto ASCII, los nombres de modelo de la lista.
-   - Aviso: si el nombre del archivo indica un modelo pero sus direcciones no tienen datos válidos, mostrar *"OJO: el nombre del archivo indica X, pero en ESAS direcciones el BIN no tiene VGH/VGL válidos"*.
-3. **Resultado**:
-   - **✅ MODELO EXACTO**: un solo grupo. Se muestra el modelo a usar, los demás modelos que se modifican igual, las direcciones y los voltajes originales.
-   - **⚠ ESCOGER / VARIOS CANDIDATOS**: varios grupos con datos válidos (OPC1/OPC2, 25V/30V). El usuario elige con "ES ESTE (ver detalle / guardar como referencia)".
-   - **❌ NINGUNO**: *"Este BIN no corresponde a ninguna dirección + posición de la lista"*. Se ofrece ⋮ → Importar lista de modelos.
-
-### 2.3 Firmas de referencia
-
-Formato del archivo de texto (sacado del encabezado de `autoscan_firmas.txt`):
+- Se carga desde `assets/autoscan_modelos_samsung.txt`: **159 líneas**, convertidas en `data/autoscan_modelos_y_grupos.json`.
+- El formato es el de una línea C, leída con esta expresión regular:
 
 ```
-# CLAVE_GRUPO;MODELO;HEX_BLOQUE_16_BYTES;HEX_2DA_COPIA_16_BYTES o -
+{"MODELO", base, vghPos, vglPos, hasSecond, base2, vgh2Pos, vgl2Pos},
 ```
 
-Funciones de la interfaz:
-- "GUARDAR ESTE BIN COMO REFERENCIA": crea la firma con los 16 bytes del bloque.
-- Avisos: "Esa firma ya estaba guardada" y "No se pudo crear la firma".
-- Menú ⋮: Exportar firmas (.txt), Importar firmas (.txt) ("No había firmas nuevas en el archivo"), Borrar mis firmas, Importar lista de modelos (.txt).
+Cada número puede ir en hex (`0x…`) o en decimal.
 
-El archivo de firmas de fábrica que llegó está **vacío**, así que la app viene sin firmas y el usuario las crea con BINs reales.
+> **Diferencia importante con el editor.** En el editor Samsung, los últimos tres campos son el **checksum**. En el Autoscan se interpretan como **una segunda copia** del bloque: `hasSecond`, `base2`, y las posiciones de VGH y VGL dentro de esa copia.
 
-**ACTIVAR AUTOSCAN (314) / DESACTIVAR AUTOSCAN (413)**: son dos opciones de menú con un número entre paréntesis. Parecen un interruptor oculto con código, pero sin los `.dex` no se puede saber para qué sirve el número. En tu app basta con una opción normal en Ajustes.
+**configKey** (identifica el grupo):
+- con segunda copia: `%08X|%02X|%02X|%08X|%02X|%02X` (base, vgh, vgl, base2, vgh2, vgl2);
+- sin segunda copia: `%08X|%02X|%02X|-`.
+
+Los modelos con la misma `configKey` forman un **grupo**, numerado en el orden en que aparece por primera vez. Salen **19 grupos**.
+
+**Diferencias con la base de la 6.7**:
+- Modelos nuevos: `QN55Q60BAG`, `QN50Q65BAKXZL` y `UN55TU7020G`.
+- `UN50DU7700` aparece **dos veces** con direcciones distintas: es un caso de "ELEGIR".
+- Ya no está `CS601C TCOM` (I2C).
+
+"Importar lista de modelos (.txt)" agrega más líneas con el mismo formato, pero **solo para la sesión actual** (no se guardan en disco).
+
+**Funciones de normalización** (para comparar nombres):
+
+```kotlin
+fun normalize(s) = s.uppercase().replace(Regex("[^A-Z0-9]"), "")
+fun coreOf(model) = model.uppercase().trim().split(Regex("[-_ ]"))[0]   // "UN55AU7000-Colombia" → "UN55AU7000"
+// serie: ^[A-Z]{2}\d{2}([A-Z]{1,2})(\d{2,4})([A-Z]?) sobre coreOf
+//   UN55AU7000 → "AU7000";  QN55Q60BAG → "Q60B" (si el número tiene 2 cifras se agrega la letra siguiente)
+//   solo vale si mide 4 caracteres o más
+fun seriesOf(model): String?
+```
+
+### 2.2 Algoritmo `BinScanner.scan(bin, fileName, db, fps)` (confirmado en el código)
+
+`normFile = normalize(nombre del archivo sin extensión)`
+
+**Paso 1, candidatos válidos.** Para cada grupo `g` (`recipe` = el primer modelo del grupo):
+1. Si `maxAddrNeeded ≥ bin.size` o `base + 16 > bin.size` → se descarta con "fuera del tamaño del archivo".
+2. Si los 16 bytes desde `base` están **en blanco** (todos `0xFF` o todos `0x00`) → "bloque vacío".
+3. Se lee `vgh = bin[base + vghPos]` y `vgl = bin[base + vglPos]`. Si alguno vale `0x00` o `0xFF` → "celda vacía, no es aquí".
+4. Si tiene segunda copia y no está en blanco, se leen `vgh2` y `vgl2` (solo para informar; no descarta el grupo).
+5. `fingerprint = fps.match(bin, g)` (sección 2.3).
+6. `nameHits` = los modelos del grupo que pasan `nameMatchesModel(normFile, modelo)`.
+7. El grupo se agrega a `valid` y al log como `VÁLIDO VGH=0x.. VGL=0x..`.
+
+> Ojo: **no** se comprueba que el byte esté en la tabla de voltajes. Basta con que no sea `00` ni `FF`.
+
+Si no queda ningún grupo válido → **NINGUNO**: "Ninguna dirección conocida tiene VGH/VGL con datos válidos."
+
+**Paso 2, filtros en cascada.** Se empieza con `set = valid` y cada filtro se aplica solo si reduce el conjunto:
+
+| # | Filtro | Cuándo se aplica |
+|---|---|---|
+| 1 | Candidatos con **firma** | si hay alguno y (son menos que `set` o es exactamente 1) |
+| 2 | **Nombre completo** en el archivo: un modelo cuyo nombre normalizado es distinto de su `coreOf` (por ejemplo `UN55AU7000COLOMBIA`) aparece como token en `normFile` | si `set > 1` y reduce |
+| 3 | Candidatos con `nameHits` | si `set > 1` y reduce |
+| 4 | **Serie** (`seriesOf`) como token en `normFile` | si `set > 1` y reduce |
+| 5 | **Texto dentro del BIN**: el `coreOf` de 9 caracteres o más aparece en el BIN (leído en ISO-8859-1 y en mayúsculas) | si `set > 1` y queda **exactamente 1** |
+
+Cada filtro que se aplica agrega su motivo, por ejemplo "coincide con la firma de un BIN real de referencia (X)" o "el nombre del archivo tiene la serie AU7000".
+
+**Paso 3, resultado.**
+- `set.size == 1` → **EXACTO**. Motivo: "Detectado porque … y …". Si no se aplicó ningún filtro: "Es la única dirección + posición de la lista con VGH/VGL válidos" (o "Única coincidencia").
+- `set.size > 1` → **ELEGIR**:
+  - si todos los candidatos tienen `nameHits` con el mismo `coreOf`: "El modelo X tiene N opciones de dirección/posición (OPC1/OPC2, 25V/30V)… escoge";
+  - si no: "quedan N grupos con direcciones DISTINTAS… escoge el de tu TV. Si lo guardas como referencia, la próxima vez será automático".
+- **Aviso final**: si el nombre del archivo corresponde a modelos de la lista pero ninguno está en los grupos que quedaron: "OJO: el nombre del archivo indica X, pero en ESAS direcciones el BIN no tiene VGH/VGL válidos…".
+
+**Coincidencia por nombre:**
+
+```kotlin
+// token: antes no puede haber una letra; después no puede haber un dígito
+fun containsToken(hay, token) = cualquier aparición i donde
+    (i == 0 || !hay[i-1].isLetter()) && (fin >= hay.length || !hay[fin].isDigit())
+
+fun nameMatchesModel(normFile, model): Boolean {
+    val core = normalize(coreOf(model))
+    if (core.length >= 7 && containsToken(normFile, core)) return true
+    // sin el prefijo de 2 letras ("UN"/"QN"/"UE"…), si mide 9 o más:
+    if (core.length >= 9 && core[0].isLetter() && core[1].isLetter()) {
+        val sinPrefijo = core.substring(2)        // "55AU7000"
+        return aparece en normFile sin dígitos pegados antes ni después
+    }
+    return false
+}
+```
+
+### 2.3 Firmas (`FingerprintStore`)
+
+- **Formato de una línea**: `configKey;MODELO;HEX16;HEX16_2da|-`, con 32 caracteres hex por bloque.
+- **Al guardar** ("GUARDAR ESTE BIN COMO REFERENCIA"): se copian los 16 bytes desde `base` (y desde `base2` si hay segunda copia).
+- **Al comparar**: debe coincidir la `configKey`, y los 16 bytes deben ser iguales **ignorando las posiciones de VGH y VGL**, que son justamente las que cambian entre equipos. Si hay segunda copia, también debe coincidir, ignorando `vgh2Pos` y `vgl2Pos`.
+- **Al agregar**: si la línea ya existe, no se duplica ("Esa firma ya estaba guardada").
+- **Carga**: primero `assets/autoscan_firmas.txt` (viene vacío, solo con el encabezado) y después `filesDir/firmas_usuario.txt`, que es donde se guardan las del usuario.
+- **Exportar**: crea `firmas_vgh_vgl.txt` con el encabezado `# Firmas VGH/VGL Scanner Samsung - DOMOTRONICASYONARHE`.
+- **Importar**: solo acepta líneas con 4 campos y bloques de 16 bytes.
+- **Borrar mis firmas**: borra `firmas_usuario.txt` y vuelve a cargar las de fábrica.
 
 ---
 
 ## 3. Facturación / Órdenes de servicio
 
-Es una **app web local** (`index.html` más `js/app.js`, `js/diagnosticos.js`, `js/jspdf.umd.min.js`, `js/logos.js` e `images/header_logo.png`) que se carga en un **WebView** dentro de `FacturasActivity`. Funciona sin internet: las órdenes se guardan solo en el dispositivo (deducido: `localStorage`). Para el PDF y la impresión usa un puente nativo `AndroidBridge`, según un comentario del propio HTML.
+### 3.1 Contenedor nativo (confirmado en el código)
 
-### 3.1 Vistas
+`FacturasActivity` es un `WebView` con JavaScript y DOM storage activados que carga `file:///android_asset/facturas/index.html`.
+- **Enlaces externos** (`wa.me`, etc.) se abren con `ACTION_VIEW`; solo `file:///android_asset/` se carga dentro del WebView.
+- **Atrás** navega dentro del WebView mientras pueda.
+
+**Puente `AndroidBridge`** (`@JavascriptInterface`):
+
+| Método | Qué hace |
+|---|---|
+| `tr(text)` | Traduce un texto con el mismo sistema i18n de la app (sección 7) |
+| `getItem(key)` / `setItem(key, value)` / `deleteItem(key)` | **Almacenamiento** en `SharedPreferences("facturas_domotronicas_prefs")`, como `commit()` síncrono. Las órdenes **no** van en `localStorage` |
+| `openWhatsApp(phone, text)` | Quita lo que no sea dígito del teléfono y abre `https://wa.me/<num>?text=<Uri.encode(text)>`. Si falla: "No se pudo abrir WhatsApp" |
+| `savePdfBase64(base64, fileName)` | En API 29 o superior lo guarda en `MediaStore.Downloads` (`IS_PENDING` 1 y luego 0); en versiones anteriores, en `Environment.DIRECTORY_DOWNLOADS`. Muestra un toast con el resultado |
+| `printPage()` | `PrintManager.print("Facturas - Ticket", webView.createPrintDocumentAdapter(…))` |
+| `toast(msg)` | Muestra un toast traducido |
+
+**Traducción del HTML**: en `onPageFinished` se inyecta un script (`TR_JS`) que recorre el DOM:
+- traduce nodos de texto y los atributos `placeholder` y `title`, y el `value` de los botones;
+- ignora `SCRIPT`, `STYLE`, `TEXTAREA` y las `OPTION` que tienen `value`;
+- normaliza espacios y respeta los espacios de los extremos;
+- con un `MutationObserver` traduce también lo que se agrega después.
+
+### 3.2 La interfaz web (de `index.html`; la lógica en sí está en `app.js`, que no llegó)
 
 Arriba hay 5 botones: **+ Nueva orden**, **📋 Órdenes guardadas**, **💰 Contabilidad**, **☀️ Modo claro/oscuro** y **⚙️ Configuración**.
 
-**Nueva orden.** Acciones siempre visibles: 💾 Guardar · 📄 Factura PDF · 🧾 Ticket térmico · 💬 WhatsApp / Factura · ＋ Nueva. Tiene 4 pestañas:
+**Nueva orden.** Acciones: 💾 Guardar · 📄 Factura PDF · 🧾 Ticket térmico · 💬 WhatsApp / Factura · ＋ Nueva. Tiene 4 pestañas:
 
 | Pestaña | Campos |
 |---|---|
-| 👤 Cliente | N° de orden (automático, solo lectura), Fecha, Cliente, Teléfono/WhatsApp, DNI/Cédula, N° de documento de factura (automático), Dirección/correo, Forma de pago (Efectivo, Transferencia, Tarjeta, Nequi/Daviplata, Bancolombia) |
-| 🔧 Equipo y diagnóstico | Tipo de equipo con íconos (Celular 📱, Tablet 📲, PC 🖥️, TV 📺, Ventilador 🌀, Lavadora 🧺, Otro 📦), Marca, Modelo, IMEI/Serie, Accesorios, **menú de diagnóstico** (tarjetas con las fallas comunes del tipo elegido, que rellenan el texto técnico; vienen de `diagnosticos.js`), Daños al recibir, Falla declarada por el cliente, Diagnóstico/Reparación |
-| 🔒 Patrón / PIN | Patrón de desbloqueo en una cuadrícula de 3×3 (con las líneas en SVG) o PIN con teclado numérico. Es de uso interno y no se comparte con el cliente |
-| 💵 Cobros | Fecha de recepción, Fecha de entrega, Presupuesto, Seña/Abono, Recargo %, Recargo $, Total, Saldo; Garantía (fecha límite, o días con el botón "Calcular"); Estado de pago (✅ PAGADO / ⏳ NO PAGADO) |
+| 👤 Cliente | N° de orden (automático), Fecha, Cliente, Teléfono/WhatsApp, DNI/Cédula, N° de documento de factura (automático), Dirección/correo, Forma de pago (Efectivo, Transferencia, Tarjeta, Nequi/Daviplata, Bancolombia) |
+| 🔧 Equipo y diagnóstico | Tipo de equipo (Celular, Tablet, PC, TV, Ventilador, Lavadora, Otro), Marca, Modelo, IMEI/Serie, Accesorios, menú de fallas comunes según el tipo (de `diagnosticos.js`), Daños al recibir, Falla declarada, Diagnóstico/Reparación |
+| 🔒 Patrón / PIN | Patrón de 3×3 (SVG) o PIN con teclado numérico. Es de uso interno |
+| 💵 Cobros | Recepción, Entrega, Presupuesto, Abono, Recargo %, Recargo $, Total, Saldo; Garantía (fecha, o días con "Calcular"); ✅ PAGADO / ⏳ NO PAGADO |
 
-**Cálculos** (deducidos de los campos):
+**Cálculos (deducidos):**
 
 ```
 recargo$ = presupuesto × recargo% / 100
@@ -150,149 +200,142 @@ saldo    = total − abono
 garantía_hasta = fecha_entrega_cliente + días_garantía
 ```
 
-Si no hay fecha de entrega, se muestra el aviso *"Cargá la fecha de entrega y los días de garantía primero"*.
+- **Listado**: buscador y estados `recibido` / `reparacion` / `entregado`.
+- **Contabilidad**: órdenes totales, facturado y saldo pendiente, más la tabla de órdenes.
+- **Configuración**: negocio, lema, NIT, teléfono, próximo N° de orden, **15 monedas** (COP, USD, MXN, ARS, PEN, CLP, UYU, BOB, VES, GTQ, DOP, CRC, PAB, EUR, BRL), idioma de la factura (es/en/pt) y cláusula legal editable.
+- **PDF**: con jsPDF, y luego `AndroidBridge.savePdfBase64`.
+- **Ticket térmico de 78 mm**: `@media print` más `AndroidBridge.printPage()`.
 
-El estado de pago elegido es el que sale en el PDF, el ticket y WhatsApp, **sin importar el saldo**.
-
-**Órdenes guardadas**: buscador (por cliente, orden o marca) y tarjetas con una etiqueta de estado: `recibido` (verde), `reparacion` (naranja) o `entregado` (azul). Cada tarjeta tiene abrir, PDF, WhatsApp y eliminar. Eliminar pide confirmación: *"¿Eliminar la orden #N de X? Esta acción no se puede deshacer."*
-
-**Contabilidad**: tres indicadores (Órdenes totales, Facturado total, Saldo pendiente) y una tabla con Orden, Cliente, Equipo, Total y Saldo. Si se usaron varias monedas, avisa que *"los montos mezclan monedas"*.
-
-**Configuración**:
-- Nombre del negocio, lema, NIT/RUT, teléfono del taller (WhatsApp) y próximo N° de orden.
-- **Moneda**: COP, USD, MXN, ARS, PEN, CLP, UYU, BOB, VES, GTQ, DOP, CRC, PAB, EUR y BRL, cada una con su símbolo.
-- **Idioma de la factura**: es, en o pt.
-- **Cláusula legal** editable (por defecto, una cláusula de abandono a los 2 meses).
-- Logo del taller.
-
-### 3.2 Salidas
-
-**PDF**: se genera con **jsPDF** y se guarda en **Descargas** ("PDF guardado en Descargas: …").
-
-**Ticket térmico de 78 mm**: hay un `#ticketPrint` con estilo `@media print` (monospace, 11 px, separadores punteados). En la app nativa imprime `AndroidBridge`; si no, usa la impresión del navegador.
-
-**WhatsApp**: abre `https://wa.me/<teléfono>?text=<mensaje>` con este formato (sale de los textos de la interfaz):
+**Mensaje de WhatsApp** (de `i18n.tsv`):
 
 ```
-*Cliente:* …
-*Equipo:* …
-*Falla declarada:* …
-*Trabajo realizado:* …
-*Presupuesto:* …
-*Recargo:* … (N%)
-*Abonado:* …
-*Saldo a cobrar:* …
-*Estado del pago:* PAGADO ✅ | PENDIENTE ⏳
-*Fecha de entrega:* …
-*Garantía (N días):* válida hasta …
+*Cliente:* … / *Equipo:* … / *Falla declarada:* … / *Trabajo realizado:* …
+*Presupuesto:* … / *Recargo:* … (N%) / *Abonado:* … / *Saldo a cobrar:* …
+*Estado del pago:* … / *Fecha de entrega:* … / *Garantía (N días):* válida hasta …
 <cláusula legal>
 ```
 
-Si la orden no tiene teléfono, muestra *"Esta orden no tiene teléfono cargado"*.
-
-### 3.3 Cómo implementarlo
-
-- **Rápido**: un WebView con tu propio HTML/JS y un `@JavascriptInterface AndroidBridge` que tenga `savePdf(base64, nombre)` (escribe en `MediaStore.Downloads`), `printTicket(html)` (`PrintManager`, o impresora térmica Bluetooth ESC/POS) y `openWhatsApp(url)`.
-- **Nativo**: Compose más Room (tablas `Order` y `Settings`), `PdfDocument` de Android para el PDF, y comandos ESC/POS para la impresora térmica.
-- **Datos**: guarda el patrón y el PIN cifrados (EncryptedSharedPreferences o SQLCipher). Son datos sensibles del cliente.
-
-Esquema de una orden propuesto (deducido de los campos del formulario):
-
-```json
-{"orderNum":1,"date":"2026-10-22","client":"","phone":"","dni":"","docNum":"","address":"",
- "payMethod":"Efectivo","type":"TV","brand":"","model":"","imei":"","access":"",
- "faults":[],"damages":"","fault":"","repair":"","pattern":[0,1,2],"pin":"",
- "dateIn":"","dateOut":"","budget":0,"deposit":0,"surchargePct":0,
- "warrantyUntil":"","warrantyDays":30,"paid":true,"status":"recibido","currency":"COP"}
-```
+**Para tu app**: copia este mismo patrón (WebView más un puente). Además:
+- **cifra** el patrón y el PIN del cliente (aquí se guardan en texto plano en SharedPreferences);
+- valida el tamaño, porque SharedPreferences no está hecho para miles de órdenes. Para eso conviene Room/SQLite.
 
 ---
 
-## 4. Editor hexadecimal completo
+## 4. Editor hexadecimal completo (`HexEditorActivity`, Compose)
 
-Funciones (sacadas de los textos de ayuda):
-- Muestra un `.bin` de **cualquier tamaño** sin dividirlo en páginas: solo dibuja lo que se ve en pantalla (`LazyColumn`), con 16 columnas (00 a 0F) más la columna ASCII y desplazamiento horizontal.
-- Origen de los datos: un archivo, o leer del chip por **SPI** (25Qxx, tamaño por JEDEC) o **I2C** (24Cxx, eligiendo chip y dirección).
-- Al tocar un byte se edita a mano. Los bytes cambiados se marcan **en rojo** hasta que se guarda o se graba.
-- GUARDAR ARCHIVO escribe el archivo completo en Descargas. GRABAR escribe en el chip, con verificación.
-- Nuevos avisos de lectura inestable: *"Lectura SPI/I2C inestable en 0x… (N/M bytes distintos entre intentos consecutivos tras K reintentos)"*. Sugiere que ahora cada bloque **se lee dos veces y se comparan**. Conviene copiarlo.
-
----
-
-## 5. Copia de Panel ID (Sony)
-
-Copia la EEPROM de identificación (I2C 24Cxx) del panel **original** al panel **nuevo**, para que el TV reconozca el reemplazo:
-
-1. **Paso 1, panel ORIGINAL**: elegir el chip (buscador, por ejemplo "24C04") y la dirección, leer y guardar el respaldo. Mensaje: "Lectura del panel ORIGINAL OK (N bytes)".
-2. **Paso 2, panel NUEVO**: conectar su EEPROM, grabar y verificar. Mensaje: "Grabación del panel NUEVO OK y verificada (N bytes)". Si no se hizo el paso 1, avisa: "⚠ Primero leé el panel ORIGINAL".
-
-Usa el mismo driver I2C del CH341A (sección 5 del documento principal) y los presets 24Cxx (sección 7).
+- **Desde archivo**: lo lee completo en memoria.
+- **Desde el chip por SPI**: `detectCapacityBytes()` por JEDEC y después `readSector()` sector por sector (4 KB), con progreso.
+- **Desde el chip por I2C**: se elige el preset 24Cxx y la dirección, y se lee en bloques con `readBytes(addr, offset, len, addrBytes)`.
+- **Vista**: una lista virtualizada (`LazyColumn`) con 16 bytes por fila y columna ASCII. Al tocar un byte se edita en hex (00 a FF). Los bytes modificados se ven en rojo.
+- **Guardar**: archivo completo en Descargas.
+- **Grabar por SPI**: se recorre el volcado en sectores de 4096 bytes y se usa `writeSector()` (borrado, programación y verificación) en cada uno.
+- **Grabar por I2C**: `writeBytes(addr, 0, data, addrBytes, pageSize, 5 ms)` con la página del preset.
 
 ---
 
-## 6. Señales de prueba (TV Tester)
+## 5. Copia de Panel ID (Sony) (`PanelIdIcSonyActivity`)
 
-Es un generador de patrones para diagnosticar paneles LCD, LED y OLED. Se lleva la imagen al TV por **USB-C → HDMI** (DisplayPort Alt Mode) o por **duplicación inalámbrica** (Smart View / Miracast).
+1. Se elige el chip de `EepromPresets.i2cChips` (24C01…24C512) y la dirección I2C.
+2. **Leer el ORIGINAL**: `EepromManager.readBytesToMemory(preset, addr)`. El resultado queda en memoria y se puede respaldar.
+3. **Grabar en el NUEVO**: `writeAndVerifyBytes` con el mismo preset. Mensaje: "Grabación del panel NUEVO OK y verificada (N bytes)".
+4. Si se intenta grabar sin haber leído antes, avisa: "⚠ Primero leé el panel ORIGINAL".
 
-| Señal | Qué es | Para qué sirve |
+---
+
+## 6. Señales de prueba (`TvPatternView`, `TvPatterns`)
+
+Es una `View` con `onDraw` de 10 patrones, sin antialias:
+
+| ID | Nombre | Cómo se dibuja |
 |---|---|---|
-| Carta de barras SMPTE | 8 barras al 100%: blanco, amarillo, cian, verde, magenta, rojo, azul, negro | Canales R/G/B, bits LVDS/V-by-One, T-CON |
-| Canal Rojo / Verde / Azul 100% | Pantalla llena de un solo color | Subpíxeles muertos o atascados, COF |
-| Campo blanco total | Todo blanco al 100% | Backlight (LED, difusores), fuente al máximo de carga |
-| Campo negro total | Todo negro | Fugas de luz, píxeles atascados, VCOM |
-| Rampa de grises · 16 | 16 escalones de 0 a 255 | Gamma, balance de blancos, VCOM |
-| Cuadrícula de geometría | 16×10 casillas blancas sobre fondo negro | Overscan, escala, mitades desfasadas |
-| Franjas horizontales | 20 franjas blanco/negro | Drivers de filas (Gate/GIP), CKV/CKVB, **VGH/VGL** |
-| Franjas verticales | 30 franjas blanco/negro | Drivers de columna (Source/COF), tab bonding |
+| 4 | Carta de Barras SMPTE | 8 barras verticales: `FFFFFF, FFFF00, 00FFFF, 00FF00, FF00FF, FF0000, 0000FF, 000000` |
+| 0 / 1 / 5 | Canal Rojo / Verde / Azul 100% | `drawColor` del color puro |
+| 2 / 3 | Campo Blanco / Negro Total | blanco o negro en toda la pantalla |
+| 6 | Rampa de Grises · 16 | 16 barras con `gris = i × 17` (0 a 255) |
+| 7 | Cuadrícula de Geometría | fondo negro con 16×10 rectángulos de contorno blanco, línea de `max(1, densidad × 0.5)` px |
+| 8 | Franjas Horizontales | 20 franjas alternadas blanco/negro |
+| 9 | Franjas Verticales | 30 franjas alternadas blanco/negro |
 
-Además hay grupos "PATRÓN MAIN" y "PATRÓN TCON". Cada tarjeta tiene un botón **i** con tres secciones: ¿PARA QUÉ SIRVE?, ¿QUÉ DEBES OBSERVAR? y FALLAS QUE DETECTA. Todos esos textos están en `data/i18n_es_en_pt.json`.
+Los límites de cada barra se redondean (`Math.round(i·w/n)`) para que no queden huecos de un píxel.
+
+**Orden de navegación**: `ORDER = [4, 0, 1, 5, 2, 3, 6, 7, 8, 9]`. Para avanzar o retroceder: `next(p, ±1)` circular.
+
+**Contenido de la pantalla**:
+- cada señal tiene nombre, etiqueta (por ejemplo "Gate · CKV · VGH/VGL") y 3 textos: ¿PARA QUÉ SIRVE?, ¿QUÉ DEBES OBSERVAR? y FALLAS QUE DETECTA;
+- guía de conexión: USB-C a HDMI (DP Alt Mode), duplicación inalámbrica, banco de trabajo y ajustes del TV;
+- todos esos textos están en `data/i18n_es_en_pt.json`.
 
 **Pantalla completa** (`TvTesterFullscreenActivity`):
-- horizontal, en modo inmersivo y con `FLAG_KEEP_SCREEN_ON`;
+- en horizontal, con las barras del sistema ocultas y la pantalla siempre encendida;
 - **1 toque**: siguiente señal; **toque largo**: anterior; **2 toques o Atrás**: salir;
 - el nombre de la señal aparece un momento y se oculta.
 
-La pantalla principal tiene un **monitor de vista previa**: tocarlo pasa a la siguiente señal.
+---
 
-**Guía "Conectar al TV"**:
-1. Por cable (recomendado).
-2. Inalámbrico, duplicando la pantalla.
-3. En el banco de trabajo: usar las franjas H/V mientras se ajustan VGH, VGL y VCOM con el editor de PMIC.
-4. Ajustes del TV para medir bien: Just Scan / Ajuste a pantalla, modo Estándar, nitidez en 0 y ahorro de energía desactivado.
+## 7. Traducción en tiempo de ejecución (`common/Tr` y `TrCore`)
 
-Implementación: un `Canvas` de Compose que dibuja cada patrón según `size` (son patrones matemáticos simples), más `WindowInsetsControllerCompat` para ocultar las barras del sistema.
+La app **no usa `strings.xml`**. Escribe todos los textos en español y los traduce al vuelo:
+
+1. **Carga**: `assets/i18n.tsv` se lee la primera vez que se traduce algo. Cada línea es `TIPO\tes\ten\tpt` y admite los escapes `\n`, `\t` y `\r`.
+2. **`E` (exacto, 1488 textos)**: un `HashMap<es, [en, pt]>`.
+3. **`T` (plantilla, 397 textos)**: cada `⟦n⟧` se convierte en el grupo `(.*?)` de una expresión regular. Se guarda el literal más largo, que sirve de filtro rápido antes de probar la expresión, y el orden de los grupos. Al traducir, se rellenan los `⟦n⟧` de la versión en/pt con lo capturado.
+4. **Si no hay coincidencia directa**: se separa un prefijo de símbolos o emoji (regex `^([^\p{L}\p{N}¿¡(<\[]+)(\S.*)$`) y se traduce el resto; también se parte por los separadores `" — "`, `" · "`, `"  |  "` y `" | "` y se traduce cada trozo.
+5. **Caché** de resultados (`HashMap` de 2048 entradas).
+6. **Idioma**: lo maneja `LocaleManager` (ES, EN o PT); con español devuelve el texto sin cambios. En Compose se usa mediante `TrTextKt`.
+
+**Para tu app**: puedes generar `strings.xml` (values, values-en, values-pt) a partir de `data/i18n_es_en_pt.json`, o copiar este esquema de traducción al vuelo, que es cómodo si el código ya está todo en español.
 
 ---
 
-## 7. Otros cambios que se ven en los textos
+## 8. Mejoras en módulos que ya existían
 
-- **Precisión VGH/VGL**: aparece el modo **"FUERZA BRUTA (ADN)"**, que corresponde al `bruteForce = true` de la 6.7 (puntaje 0, sin voltaje objetivo), y una sección "ANÁLISIS CON VOLTAJE".
-- **Editor Parche Samsung**:
-  - nuevo aviso cuando no se encuentra el voltaje: *"VGH: código (sin voltaje confirmado)"*;
-  - "Cargar backup (.bin)" para modelos I2C como el CS601C TCOM;
-  - "GRABAR DIRECTO EN LA MEMORIA" solo escribe los bytes de VGH y VGL.
-- **PMIC**:
-  - **escaneo del bus I2C** (*"responden 0x…, pero NO 0x…"*), que prueba todas las direcciones para ver cuáles contestan;
-  - modo "RT43 FF01 (versión original)".
-- **Prueba del CS en SPI**: *"CS probado en … pero JEDEC ID = … (sin respuesta real del chip)"*.
-- **ADB por red**: botón **INSTALAR APK** (ADB `sync:` + `pm install`, o `exec:cmd package install -S <tamaño>` enviando el APK por el stream) y mensajes de error de autenticación más claros.
-- **Control LG**: *"Los 60 botones de arriba fueron clonados directo de tu control de servicio LG original"*.
-- **Entrada 🎤 VOZ**: probablemente dictado por voz (`RecognizerIntent`) para la terminal o los buscadores. Eso explicaría el permiso `RECORD_AUDIO` además del osciloscopio.
-- **Licencia**: mismo esquema que la 6.7. Los textos nuevos dicen *"🔒 Requiere licencia activa (se pide al entrar)"* y *"🔒 Función bloqueada: activa la licencia primero"*, o sea que ahora el bloqueo es por función.
-- **Idiomas**: los 1885 textos están completos en es/en/pt (no falta ninguna traducción). Las variables van como `⟦0⟧`, `⟦1⟧`, … y algunos textos traen HTML (`<b>`, `<span style>`), que se muestra con `Html.fromHtml` o `AnnotatedString`. La columna 1 del TSV dice `E` (texto exacto, 1488) o `T` (plantilla con variables, 397).
+### 8.1 PMIC: lectura robusta de la familia SW (`readSwFamily`)
+
+El driver I2C ahora tiene:
+- `SPEED_SLOW_20K = 0`;
+- `probeAck(addr)`: envía `[AA 74 80 addr<<1 75 00]` y lee el estado; `bit7 = 0` significa ACK;
+- `drainIn()`: vacía el endpoint IN con lecturas de 5 ms;
+- `writePointer(addr, reg)`: escritura con STOP;
+- `readCurrent(addr, len)`: lectura sin escribir antes el puntero, en bloques de 26 bytes.
+
+La lectura **prueba varios métodos en orden** y se queda con el primero cuyos valores de VGH y VGL **están dentro de la tabla del chip**:
+
+| Método | Secuencia |
+|---|---|
+| `O-FFxx` (metodoCtrl) | escribir `0xFF ← xx`, esperar `readDelayMs`, leer el bloque desde el registro 0 (repeated start) |
+| Repeated | `0xFF ← 0x00`, esperar, `readBytes(addr, 0, len)` |
+| Stop | `0xFF ← 0x00`, esperar, `writePointer(addr, 0)` (con STOP), 2 ms, `readCurrent` |
+| `N-sinFF` | leer sin tocar `0xFF` |
+| `A-20kHz` / `B-20kHz` | repetir los métodos a 20 kHz, para cables largos o pinzas malas |
+
+Si ningún método da valores dentro de la tabla, `probeAck` diagnostica el problema:
+- "el chip SÍ responde (ACK) en 0x.. → hay comunicación pero los datos no cuadran";
+- "NADIE responde en 0x.. → revisar SDA/SCL, GND, alimentación del PMIC o pinza".
+
+También son nuevos: `readRt43` / `saveRt43` (familia RT6943, incluido el modo "RT43 FF01 (versión original)"), `readCs60x`, `saveSwFamily`, `writeSingleRegister(chip, offset, valor)` (graba un solo registro) y `writeVghUnlockByte`. La base de datos agrega `PmicFamilyGroups`.
+
+### 8.2 ADB por red: INSTALAR APK
+
+1. `push(apk, "/data/local/tmp/dy_instalar.apk")` por el **protocolo sync**: `OPEN "sync:"`, luego `SEND` con `"ruta,33188"` (modo 0644), bloques `DATA` de hasta **64 KB**, `DONE` con fecha, esperar `OKAY` (o `FAIL` con el mensaje), `QUIT` y cerrar con `CLSE`.
+2. `shell("pm install -r -g …")`. Si el TV responde "Unknown option", reintenta sin `-g`.
+3. Si aparece `INSTALL_FAILED_UPDATE_INCOMPATIBLE` o un error de versión, explica que la app ya existe con otra firma o en una versión más nueva.
+
+### 8.3 Otros
+
+- **Precisión VGH/VGL**: el botón **"FUERZA BRUTA (ADN)"** corresponde a `bruteForce = true` (todos los candidatos con puntaje 0).
+- **Menú principal**: nueva tarjeta "AUTOSCAN BIN VGH VGL SAMSUNG" (🔎), una `WelcomeScreen` y una tarjeta de FACTURAS.
+- **Licencia**: ahora bloquea por función ("🔒 Función bloqueada: activa la licencia primero").
 
 ---
 
-## 8. Archivos de esta carpeta
+## 9. Archivos de esta carpeta
 
 | Archivo | Contenido |
 |---|---|
 | `data/AndroidManifest.v9.decodificado.xml` | Manifiesto 9.0 en texto |
-| `data/autoscan_modelos_y_grupos.json` | 159 modelos y los 19 grupos de dirección+posición |
-| `data/i18n_es_en_pt.json` | 1885 textos `{tipo, es, en, pt}` (sirve para armar los `strings.xml`) |
+| `data/autoscan_modelos_y_grupos.json` | Los 159 modelos y los 19 grupos. Los campos `checksum`, `base_check`, `vgh_chk_pos` y `vgl_chk_pos` equivalen a `hasSecond`, `base2`, `vgh2Pos` y `vgl2Pos` del Autoscan |
+| `data/i18n_es_en_pt.json` | Los 1885 textos `{tipo E/T, es, en, pt}` |
 
-## 9. Qué falta para completar la 9.0
+## 10. Qué falta
 
-Para describir los algoritmos internos de Autoscan, Facturas, Hex Editor, Panel ID y TV Tester con la misma precisión que la 6.7, necesito:
-1. los `classes*.dex` de la versión 9.0 (o el `.apk` completo);
-2. `assets/js/app.js` y `assets/js/diagnosticos.js` (la lógica de facturas y la lista de fallas por tipo de equipo).
+- `assets/facturas/js/app.js` y `js/diagnosticos.js`, para documentar exactamente el guardado de las órdenes, el diseño del PDF y la lista de fallas por tipo de equipo.
