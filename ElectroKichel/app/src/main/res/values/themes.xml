@@ -1,0 +1,10 @@
+<resources>
+    <style name="Theme.ElectroKichel" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/ek_bg</item>
+        <item name="android:statusBarColor">@color/ek_bg</item>
+        <item name="android:navigationBarColor">@color/ek_bg</item>
+    </style>
+    <style name="Theme.ElectroKichel.Fullscreen" parent="android:Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>
