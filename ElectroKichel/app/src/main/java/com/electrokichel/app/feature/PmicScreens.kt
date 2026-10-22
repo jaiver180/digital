@@ -122,8 +122,24 @@ object PmicCal {
         prefs(ctx).getString("${chip.id}_$reg", null)?.split(";")?.let { p ->
             if (p.size == 2) return p[0].toDouble() to p[1].toDouble()
         }
+        factory(ctx, chip, reg)?.let { return it }
         // Valor de fábrica: familia SW (VGL en offset 4, 64 niveles): 0x3F = -8.1 V, 0x28 = -5.8 V
         if (reg == "VGL" && chip.trigger == com.electrokichel.app.core.data.PmicTrigger.SW_DIRECT_0x80 && chip.vglOff == 4) return -1.8 to -0.1
+        return null
+    }
+    private var table: org.json.JSONArray? = null
+    /** Calibración de fábrica desde assets/pmic_calibracion.json (por id, o por dirección I2C + registro). */
+    private fun factory(ctx: android.content.Context, chip: PmicChip, reg: String): Pair<Double, Double>? {
+        val t = table ?: runCatching { org.json.JSONArray(ctx.assets.open("pmic_calibracion.json").bufferedReader().use { it.readText() }) }
+            .getOrNull()?.also { table = it } ?: return null
+        val off = when (reg) { "VGH" -> chip.vghOff; "VGL" -> chip.vglOff; "VGL2" -> chip.vgl2Off; "VCOM" -> chip.vcomOff; else -> -1 }
+        for (i in 0 until t.length()) {
+            val e = t.getJSONObject(i)
+            val r = e.getJSONObject("regs").optJSONObject(reg) ?: continue
+            val byId = e.getString("id").equals(chip.id, true)
+            val byAddr = e.getInt("i2c") == chip.i2cAddr && r.getInt("addr") == off
+            if (byId || byAddr) return r.getDouble("base") to r.getDouble("paso")
+        }
         return null
     }
     fun set(ctx: android.content.Context, chip: PmicChip, reg: String, base: Double, step: Double) {

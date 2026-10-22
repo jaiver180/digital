@@ -1,0 +1,268 @@
+[
+ {
+  "id": "VPMS2SM",
+  "modelo": "VPMS2SM",
+  "i2c": 32,
+  "regs": {
+   "VGH": {
+    "addr": 10,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 11,
+    "base": -6.2,
+    "paso": -0.05
+   }
+  }
+ },
+ {
+  "id": "LP6281",
+  "modelo": "LP6281",
+  "i2c": 32,
+  "regs": {
+   "VGH": {
+    "addr": 3,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 5,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 8,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "LG_SW50224",
+  "modelo": "SW50224",
+  "i2c": 32,
+  "regs": {
+   "VGH": {
+    "addr": 4,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 6,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 7,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "RT6937",
+  "modelo": "RT6937",
+  "i2c": 32,
+  "regs": {
+   "VGH": {
+    "addr": 5,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 6,
+    "base": -6.2,
+    "paso": -0.1
+   }
+  }
+ },
+ {
+  "id": "RT6925",
+  "modelo": "RT6925",
+  "i2c": 32,
+  "regs": {
+   "VGH": {
+    "addr": 10,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 11,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 12,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "NT50330P",
+  "modelo": "NT50330P",
+  "i2c": 62,
+  "regs": {
+   "VGH": {
+    "addr": 16,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 17,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 18,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "NT50330S",
+  "modelo": "NT50330S",
+  "i2c": 62,
+  "regs": {
+   "VGH": {
+    "addr": 16,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 17,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 18,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "NT50660S",
+  "modelo": "NT50660S",
+  "i2c": 62,
+  "regs": {
+   "VGH": {
+    "addr": 32,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 33,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 34,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "HX2510",
+  "modelo": "HX2510",
+  "i2c": 64,
+  "regs": {
+   "VGH": {
+    "addr": 48,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 49,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 50,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "SG2510",
+  "modelo": "SG2510",
+  "i2c": 64,
+  "regs": {
+   "VGH": {
+    "addr": 48,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 49,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 50,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "IML8940",
+  "modelo": "IML8940",
+  "i2c": 58,
+  "regs": {
+   "VGH": {
+    "addr": 20,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 21,
+    "base": -6.2,
+    "paso": -0.1
+   },
+   "VCOM": {
+    "addr": 22,
+    "base": 5.0,
+    "paso": 0.02
+   }
+  }
+ },
+ {
+  "id": "SM4186_20",
+  "modelo": "SM4186 (0x20)",
+  "i2c": 32,
+  "regs": {
+   "VGH": {
+    "addr": 3,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 5,
+    "base": -6.2,
+    "paso": -0.1
+   }
+  }
+ },
+ {
+  "id": "SM4186_21",
+  "modelo": "SM4186 (0x21)",
+  "i2c": 33,
+  "regs": {
+   "VGH": {
+    "addr": 3,
+    "base": 25.0,
+    "paso": 0.1
+   },
+   "VGL": {
+    "addr": 5,
+    "base": -6.2,
+    "paso": -0.1
+   }
+  }
+ }
+]
