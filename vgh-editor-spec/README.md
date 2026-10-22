@@ -1,5 +1,7 @@
 # Especificación técnica para recrear una app tipo "VGH/VGL Editor" (Android)
 
+> **Versión 9.0 GOLD KING:** las novedades están en [`v9-gold-king/README.md`](v9-gold-king/README.md).
+
 Documento obtenido del análisis del APK **VGH/VGL Editor — DOMOTRONICAS YONARHE v6.7** (`com.domotronicas.vgheditor`, versionCode 13).
 Describe **qué hace cada función y cómo funciona por dentro** (protocolos USB/I2C/SPI/IR/ADB, tiempos y algoritmos), con los datos técnicos exportados a `data/`, para que puedas escribir **tu propia app** con las mismas capacidades.
 
