@@ -7,6 +7,7 @@ import com.electrokichel.app.core.usb.UsbHub
 class ElectroApp : Application() {
     override fun onCreate() {
         super.onCreate()
+        CrashCatcher.install(this)
         UsbHub.init(this)
         runCatching { Repo.ensure(this) }
     }

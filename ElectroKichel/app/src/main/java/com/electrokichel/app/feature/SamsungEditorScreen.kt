@@ -53,7 +53,8 @@ fun SamsungEditorScreen(onBack: () -> Unit) {
                 }
                 EkButton("🔎 AUTODETECTAR", EkTeal, enabled = connected) {
                     scope.launch {
-                        runCatching { io { UsbHub.withCh341 { ch -> SamsungEditor.detectModel(ch.readBytes(Repo.samsungModels.first().baseMain, 16)) } } }
+                        val base = Repo.samsungModels.firstOrNull()?.baseMain ?: 0L
+                        runCatching { io { UsbHub.withCh341 { ch -> SamsungEditor.detectModel(ch.readBytes(base, 16)) } } }
                             .onSuccess { if (it != null) { model = it; log.add("Detectado: ${it.name}") } else log.add("❌ No se pudo autodetectar") }
                             .onFailure { log.add("❌ ${it.message}") }
                     }
