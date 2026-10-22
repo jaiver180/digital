@@ -56,10 +56,21 @@ fun PmicScreen(onBack: () -> Unit) {
                 }
                 block?.let { blk ->
                     Spacer(Modifier.height(8.dp))
-                    RegSlider("VGH", blk, c.vghOff, log)
-                    RegSlider("VGL", blk, c.vglOff, log)
-                    if (c.hasVgl2) RegSlider("VGL2", blk, c.vgl2Off, log)
-                    if (c.hasVcom) RegSlider("VCOM", blk, c.vcomOff, log)
+                    val ctx2 = LocalContext.current
+                    var tick by remember { mutableStateOf(0) }
+                    val vgh = PmicCal.volts(ctx2, c, "VGH", blk[c.vghOff].toInt() and 0xFF)
+                    val vgl = PmicCal.volts(ctx2, c, "VGL", blk[c.vglOff].toInt() and 0xFF)
+                    if (vgh != null && vgl != null) Text("VPP (pico a pico): %.1f V".format(vgh - vgl), color = EkOrange, fontSize = 16.sp)
+                    Text("$tick", color = EkBg, fontSize = 1.sp)
+                    RegSlider(c, "VGH", blk, c.vghOff) { tick++ }
+                    RegSlider(c, "VGL", blk, c.vglOff) { tick++ }
+                    if (c.hasVgl2) RegSlider(c, "VGL2", blk, c.vgl2Off) { tick++ }
+                    if (c.hasVcom) RegSlider(c, "VCOM", blk, c.vcomOff) { tick++ }
+                    EkButton("⚡ ESCRIBIR AL CHIP (EN VIVO)", EkOrange, enabled = connected, modifier = Modifier.fillMaxWidth()) {
+                        scope.launch { runCatching { io { UsbHub.withCh341 { ch ->
+                            ch.i2cWrite(c.i2cAddr, 0, blk, 1, blk.size, 0) } } }
+                            .onSuccess { log.add("✅ Escrito en vivo (usa GRABAR BLOQUE para guardarlo en la EEPROM)") }.onFailure { log.add("❌ ${it.message}") } }
+                    }
                 }
             }
         }
@@ -68,11 +79,58 @@ fun PmicScreen(onBack: () -> Unit) {
 }
 
 @androidx.compose.runtime.Composable
-private fun RegSlider(name: String, block: ByteArray, off: Int, log: LogState) {
+private fun RegSlider(chip: PmicChip, name: String, block: ByteArray, off: Int, onChange: () -> Unit) {
     if (off !in block.indices) return
+    val ctx = LocalContext.current
     var v by remember(name, block) { mutableStateOf(block[off].toInt() and 0xFF) }
-    Text("$name  (offset $off)  =  0x%02X  ($v)".format(v), color = EkText, fontSize = 14.sp)
-    Slider(v.toFloat(), { v = it.toInt(); block[off] = v.toByte() }, valueRange = 0f..255f)
+    var cal by remember { mutableStateOf(false) }
+    val volts = PmicCal.volts(ctx, chip, name, v)
+    Text("$name = " + (volts?.let { "%+.1f V   ".format(it) } ?: "") + "(código 0x%02X = %d)".format(v, v), color = EkText, fontSize = 15.sp)
+    Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+        Slider(v.toFloat(), { v = it.toInt(); block[off] = v.toByte(); onChange() }, valueRange = 0f..255f, modifier = Modifier.weight(1f))
+        androidx.compose.material3.TextButton(onClick = { cal = true }) { Text("Calibrar", color = EkBlue, fontSize = 12.sp) }
+    }
+    if (cal) {
+        val cur = PmicCal.get(ctx, chip, name)
+        var base by remember { mutableStateOf(cur?.first?.toString() ?: "") }
+        var step by remember { mutableStateOf(cur?.second?.toString() ?: "") }
+        var meas by remember { mutableStateOf("") }
+        androidx.compose.material3.AlertDialog(onDismissRequest = { cal = false },
+            title = { Text("Calibrar $name (${chip.nombre})") },
+            text = { Column {
+                Text("V = base + paso × código", fontSize = 12.sp)
+                androidx.compose.material3.OutlinedTextField(base, { base = it }, label = { Text("Base (V)") })
+                androidx.compose.material3.OutlinedTextField(step, { step = it }, label = { Text("Paso (V por código)") })
+                Text("O: mide con el multímetro y escribe el voltaje actual (código $v); se calcula la base con el paso:", fontSize = 12.sp)
+                androidx.compose.material3.OutlinedTextField(meas, { meas = it }, label = { Text("Voltaje medido (V)") })
+            } },
+            confirmButton = { androidx.compose.material3.TextButton(onClick = {
+                val st = step.replace(',', '.').toDoubleOrNull()
+                val m = meas.replace(',', '.').toDoubleOrNull()
+                val b = if (m != null && st != null) m - st * v else base.replace(',', '.').toDoubleOrNull()
+                if (b != null && st != null) PmicCal.set(ctx, chip, name, b, st)
+                cal = false; onChange()
+            }) { Text("Guardar") } },
+            dismissButton = { androidx.compose.material3.TextButton(onClick = { cal = false }) { Text("Cancelar") } })
+    }
+}
+
+/** Conversión código→voltaje por chip (V = base + paso × código), guardada en el teléfono. */
+object PmicCal {
+    private fun prefs(c: android.content.Context) = c.getSharedPreferences("pmic_cal", android.content.Context.MODE_PRIVATE)
+    fun get(ctx: android.content.Context, chip: PmicChip, reg: String): Pair<Double, Double>? {
+        prefs(ctx).getString("${chip.id}_$reg", null)?.split(";")?.let { p ->
+            if (p.size == 2) return p[0].toDouble() to p[1].toDouble()
+        }
+        // Valor de fábrica: familia SW (VGL en offset 4, 64 niveles): 0x3F = -8.1 V, 0x28 = -5.8 V
+        if (reg == "VGL" && chip.trigger == com.electrokichel.app.core.data.PmicTrigger.SW_DIRECT_0x80 && chip.vglOff == 4) return -1.8 to -0.1
+        return null
+    }
+    fun set(ctx: android.content.Context, chip: PmicChip, reg: String, base: Double, step: Double) {
+        prefs(ctx).edit().putString("${chip.id}_$reg", "$base;$step").apply()
+    }
+    fun volts(ctx: android.content.Context, chip: PmicChip, reg: String, code: Int): Double? =
+        get(ctx, chip, reg)?.let { it.first + it.second * code }
 }
 
 /** I2C Samsung en vivo (dirección 0x20). */

@@ -68,6 +68,12 @@ class Ch341 private constructor(
     private fun bulkIn(buf: ByteArray, len: Int): Int =
         if (!isOpen) -1 else conn.bulkTransfer(epIn, buf, len, 3000)
 
+    /** Vacía bytes viejos del endpoint IN (evita lecturas desalineadas). */
+    fun drainIn() {
+        val buf = ByteArray(64)
+        repeat(4) { if (!isOpen || conn.bulkTransfer(epIn, buf, buf.size, 5) <= 0) return }
+    }
+
     fun close() {
         if (!isOpen) return
         runCatching { bulkOut(byteArrayOf(CMD_UIO, 0xB7.toByte(), 0x40, 0x20)) }
@@ -90,6 +96,7 @@ class Ch341 private constructor(
     @Synchronized
     fun spi(write: ByteArray, readCount: Int): ByteArray {
         check(isOpen) { "El CH341A no está conectado. Reconéctalo y pulsa Conectar." }
+        drainIn()
         csLow()
         val total = write.size + readCount
         val received = ByteArray(total)
@@ -200,6 +207,7 @@ class Ch341 private constructor(
 
     /** Lectura I2C con dirección de memoria de 1 o 2 bytes (24Cxx, EDID, PMIC). */
     fun i2cRead(dev: Int, memAddr: Int, length: Int, addrBytes: Int): ByteArray {
+        drainIn()
         val result = ByteArray(length)
         var offset = 0
         while (offset < length) {
@@ -257,6 +265,7 @@ class Ch341 private constructor(
 
     /** ¿Responde (ACK) la dirección? */
     fun i2cProbe(dev: Int): Boolean? {
+        drainIn()
         val pkt = byteArrayOf(CMD_I2C, I2C_STA, I2C_OUT.toByte(), ((dev shl 1) or 0).toByte(), I2C_STO, 0)
         if (bulkOut(pkt) < 0) return null
         val buf = ByteArray(32)

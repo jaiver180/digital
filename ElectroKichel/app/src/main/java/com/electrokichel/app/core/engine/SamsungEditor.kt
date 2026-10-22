@@ -31,7 +31,7 @@ object SamsungEditor {
         return null
     }
 
-    data class Reading(val vghIdx: Int, val vglIdx: Int, val vghV: Double, val vglV: Double, val vghChk: Int?, val vglChk: Int?)
+    data class Reading(val vghIdx: Int, val vglIdx: Int, val vghV: Double, val vglV: Double, val vghChk: Int?, val vglChk: Int?, val vghRaw: Int = 0, val vglRaw: Int = 0)
 
     fun readFromChip(ch: Ch341, m: FlashModel): Reading {
         val vghByte: Int; val vglByte: Int; var vc: Int? = null; var lc: Int? = null
@@ -39,6 +39,7 @@ object SamsungEditor {
             vghByte = ch.i2cRead(m.i2cAddr, m.baseMain.toInt() + m.vghPos, 1, 2)[0].toInt() and 0xFF
             vglByte = ch.i2cRead(m.i2cAddr, m.baseMain.toInt() + m.vglPos, 1, 2)[0].toInt() and 0xFF
         } else {
+            ch.releasePowerDown()
             vghByte = ch.readBytes(m.baseMain + m.vghPos, 1)[0].toInt() and 0xFF
             vglByte = ch.readBytes(m.baseMain + m.vglPos, 1)[0].toInt() and 0xFF
             if (m.checksum) {
@@ -48,7 +49,9 @@ object SamsungEditor {
         }
         val vt = vghTable(m); val lt = vglTable(m)
         val vi = indexOfHex(vt, vghByte); val li = indexOfHex(lt, vglByte)
-        return Reading(vi, li, vt[vi].volts, lt[li].volts, vc, lc)
+        if (vt.none { it.hex == vghByte } || lt.none { it.hex == vglByte })
+            error("Lectura inválida: VGH=0x%02X VGL=0x%02X (no están en la tabla). Revisa la pinza SOP8 y vuelve a leer.".format(vghByte, vglByte))
+        return Reading(vi, li, vt[vi].volts, lt[li].volts, vc, lc, vghByte, vglByte)
     }
 
     /** Graba en el chip los nuevos índices (SPI: lee el sector, modifica, reescribe). */

@@ -81,5 +81,9 @@ object UsbHub {
 
     val isCh341Open: Boolean get() = ch341?.isOpen == true
 
-    suspend fun <T> withCh341(block: suspend (Ch341) -> T): T = lock.withLock { block(openCh341()) }
+    /** Ejecuta con el CH341A; si falla, reconecta una vez y reintenta. */
+    suspend fun <T> withCh341(block: suspend (Ch341) -> T): T = lock.withLock {
+        try { block(openCh341()) }
+        catch (e: Exception) { closeCh341(); Thread.sleep(150); block(openCh341()) }
+    }
 }
