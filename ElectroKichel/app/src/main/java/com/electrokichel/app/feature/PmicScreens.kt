@@ -35,7 +35,16 @@ fun PmicScreen(onBack: () -> Unit) {
                 }
                 EkButton("ESCANEAR I2C", EkTeal, enabled = connected) {
                     scope.launch { runCatching { io { UsbHub.withCh341 { ch -> PmicProtocol(ch).scanBus() } } }
-                        .onSuccess { log.add("Responden: " + it.joinToString { a -> "0x%02X".format(a) }) }.onFailure { log.add("❌ ${it.message}") } }
+                        .onSuccess { found ->
+                            log.add("Responden: " + found.joinToString { a -> "0x%02X".format(a) })
+                            val cand = Repo.pmicChips.filter { it.i2cAddr in found }
+                            if (cand.isEmpty()) log.add("❌ Ninguna dirección corresponde a un PMIC de la lista")
+                            else {
+                                if (chip == null || chip!!.i2cAddr !in found) chip = cand.first()
+                                log.add("PMIC en 0x%02X → ${cand.size} posibles: ".format(cand.first().i2cAddr) + cand.take(8).joinToString { it.nombre } + if (cand.size > 8) "…" else "")
+                                log.add("Seleccionado ${chip!!.nombre}. Si es otro modelo, elígelo en la lista y pulsa LEER BLOQUE.")
+                            }
+                        }.onFailure { log.add("❌ ${it.message}") } }
                 }
             }
             Spacer(Modifier.height(8.dp))
