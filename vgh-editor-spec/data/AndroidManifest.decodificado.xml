@@ -1,0 +1,80 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="13" android:versionName="6.7" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="com.domotronicas.vgheditor" platformBuildVersionCode="34" platformBuildVersionName="14">
+  <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34"/>
+  <uses-feature android:name="android.hardware.usb.host" android:required="true"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+  <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
+  <uses-permission android:name="android.permission.TRANSMIT_IR"/>
+  <uses-feature android:name="android.hardware.consumerir" android:required="false"/>
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+  <permission android:name="com.domotronicas.vgheditor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="0x00000002"/>
+  <uses-permission android:name="com.domotronicas.vgheditor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+  <application android:theme="@7F10027F" android:label="@7F0F001C" android:icon="@7F0D0000" android:name="com.domotronicas.vgheditor.VghApplication" android:debuggable="true" android:allowBackup="true" android:supportsRtl="true" android:extractNativeLibs="false" android:roundIcon="@7F0D0000" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+    <activity android:theme="@7F10027F" android:name="com.domotronicas.vgheditor.HomeActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F10028B" android:name="com.domotronicas.vgheditor.MainActivity" android:exported="false" android:launchMode="2" android:configChanges="0x000004A0"/>
+    <activity android:theme="@7F10028C" android:name="com.domotronicas.vgheditor.SamsungServiceActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F10028A" android:name="com.domotronicas.vgheditor.LgServiceActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100288" android:name="com.domotronicas.vgheditor.kalleyolimpo.KalleyOlimpoActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100290" android:name="com.domotronicas.vgheditor.multimarcas.TclRc902vActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100285" android:name="com.domotronicas.vgheditor.multimarcas.HyundaiChallengerActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100289" android:name="com.domotronicas.vgheditor.multimarcas.KalleySmartTvActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F10028E" android:name="com.domotronicas.vgheditor.multimarcas.SharpServiceActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100286" android:name="com.domotronicas.vgheditor.multimarcas.KalleyAndroidTvActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100282" android:name="com.domotronicas.vgheditor.multimarcas.FinlandekActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100287" android:name="com.domotronicas.vgheditor.multimarcas.KalleyHisenseActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F10028D" android:name="com.domotronicas.vgheditor.multimarcas.SankeyRd1545Activity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100284" android:name="com.domotronicas.vgheditor.multimarcas.HyundaiAndroidTvActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F10028F" android:name="com.domotronicas.vgheditor.multimarcas.SonyActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100283" android:name="com.domotronicas.vgheditor.multimarcas.HisenseServiceActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100292" android:name="com.domotronicas.vgheditor.uart.UartRecoveryActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:name="com.domotronicas.vgheditor.bindiff.FullBlockViewActivity" android:exported="false"/>
+    <activity android:theme="@7F100291" android:name="com.domotronicas.vgheditor.tvbox.RecoveryTvBoxActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100281" android:name="com.domotronicas.vgheditor.emmc.EmmcIspActivity" android:exported="false" android:launchMode="2"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.database.DatabaseActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.calculator.CalculadoraElectronicaActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.hdmi.ClinicaHdmiActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.bindiff.ComparadorBinActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.adbtools.ControlRemotoRedActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.divisionrepair.ReparacionImagenDivididaActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.multimarcas.ServiceRemoteActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.servicemode.IngresoModoServiciosActivity" android:exported="false"/>
+    <activity android:theme="@7F100280" android:name="com.domotronicas.vgheditor.PrecisionVghVglActivity" android:exported="false"/>
+    <activity android:theme="@7F10027F" android:name="com.domotronicas.vgheditor.SplashActivity" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity android:theme="@7F10027F" android:name="com.domotronicas.vgheditor.recovery.RecoveryActivity" android:exported="true" android:launchMode="2">
+      <intent-filter>
+        <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+      </intent-filter>
+      <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" android:resource="@7F120000"/>
+    </activity>
+    <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.domotronicas.vgheditor.androidx-startup">
+      <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+      <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+      <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+    </provider>
+    <receiver android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP" android:enabled="true" android:exported="true" android:directBootAware="false">
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>
