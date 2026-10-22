@@ -1,0 +1,3445 @@
+{
+ "tabla_vgh_samsung": [
+  {
+   "voltios": 17.1,
+   "hex": 84
+  },
+  {
+   "voltios": 17.3,
+   "hex": 85
+  },
+  {
+   "voltios": 17.5,
+   "hex": 86
+  },
+  {
+   "voltios": 17.7,
+   "hex": 87
+  },
+  {
+   "voltios": 18.2,
+   "hex": 88
+  },
+  {
+   "voltios": 18.3,
+   "hex": 89
+  },
+  {
+   "voltios": 18.5,
+   "hex": 90
+  },
+  {
+   "voltios": 18.7,
+   "hex": 91
+  },
+  {
+   "voltios": 18.9,
+   "hex": 92
+  },
+  {
+   "voltios": 19.1,
+   "hex": 93
+  },
+  {
+   "voltios": 19.3,
+   "hex": 94
+  },
+  {
+   "voltios": 19.5,
+   "hex": 95
+  },
+  {
+   "voltios": 19.7,
+   "hex": 96
+  },
+  {
+   "voltios": 20.0,
+   "hex": 97
+  },
+  {
+   "voltios": 20.2,
+   "hex": 98
+  },
+  {
+   "voltios": 20.4,
+   "hex": 99
+  },
+  {
+   "voltios": 20.6,
+   "hex": 100
+  },
+  {
+   "voltios": 20.8,
+   "hex": 101
+  },
+  {
+   "voltios": 21.0,
+   "hex": 102
+  },
+  {
+   "voltios": 21.2,
+   "hex": 103
+  },
+  {
+   "voltios": 21.4,
+   "hex": 104
+  },
+  {
+   "voltios": 21.6,
+   "hex": 105
+  },
+  {
+   "voltios": 21.8,
+   "hex": 106
+  },
+  {
+   "voltios": 22.0,
+   "hex": 107
+  },
+  {
+   "voltios": 22.2,
+   "hex": 108
+  },
+  {
+   "voltios": 22.4,
+   "hex": 109
+  },
+  {
+   "voltios": 22.6,
+   "hex": 110
+  },
+  {
+   "voltios": 22.8,
+   "hex": 111
+  },
+  {
+   "voltios": 23.0,
+   "hex": 112
+  },
+  {
+   "voltios": 23.2,
+   "hex": 113
+  },
+  {
+   "voltios": 23.4,
+   "hex": 114
+  },
+  {
+   "voltios": 23.6,
+   "hex": 115
+  },
+  {
+   "voltios": 23.8,
+   "hex": 116
+  },
+  {
+   "voltios": 24.0,
+   "hex": 117
+  },
+  {
+   "voltios": 24.2,
+   "hex": 118
+  },
+  {
+   "voltios": 24.4,
+   "hex": 119
+  },
+  {
+   "voltios": 24.6,
+   "hex": 120
+  },
+  {
+   "voltios": 24.8,
+   "hex": 121
+  },
+  {
+   "voltios": 25.0,
+   "hex": 122
+  },
+  {
+   "voltios": 25.2,
+   "hex": 123
+  },
+  {
+   "voltios": 25.4,
+   "hex": 124
+  },
+  {
+   "voltios": 25.6,
+   "hex": 125
+  },
+  {
+   "voltios": 25.8,
+   "hex": 126
+  },
+  {
+   "voltios": 26.0,
+   "hex": 127
+  },
+  {
+   "voltios": 26.2,
+   "hex": 128
+  },
+  {
+   "voltios": 26.4,
+   "hex": 129
+  },
+  {
+   "voltios": 26.6,
+   "hex": 130
+  },
+  {
+   "voltios": 26.8,
+   "hex": 131
+  },
+  {
+   "voltios": 27.0,
+   "hex": 132
+  },
+  {
+   "voltios": 27.2,
+   "hex": 133
+  },
+  {
+   "voltios": 27.4,
+   "hex": 134
+  },
+  {
+   "voltios": 27.6,
+   "hex": 135
+  },
+  {
+   "voltios": 27.8,
+   "hex": 136
+  },
+  {
+   "voltios": 28.0,
+   "hex": 137
+  },
+  {
+   "voltios": 28.2,
+   "hex": 138
+  },
+  {
+   "voltios": 28.4,
+   "hex": 139
+  },
+  {
+   "voltios": 28.6,
+   "hex": 140
+  },
+  {
+   "voltios": 28.8,
+   "hex": 141
+  },
+  {
+   "voltios": 29.0,
+   "hex": 142
+  },
+  {
+   "voltios": 29.2,
+   "hex": 143
+  },
+  {
+   "voltios": 29.4,
+   "hex": 144
+  },
+  {
+   "voltios": 29.6,
+   "hex": 145
+  },
+  {
+   "voltios": 29.8,
+   "hex": 146
+  },
+  {
+   "voltios": 30.0,
+   "hex": 147
+  },
+  {
+   "voltios": 30.2,
+   "hex": 148
+  },
+  {
+   "voltios": 30.4,
+   "hex": 149
+  },
+  {
+   "voltios": 30.6,
+   "hex": 150
+  },
+  {
+   "voltios": 30.8,
+   "hex": 151
+  },
+  {
+   "voltios": 31.0,
+   "hex": 152
+  },
+  {
+   "voltios": 31.3,
+   "hex": 153
+  },
+  {
+   "voltios": 31.5,
+   "hex": 154
+  },
+  {
+   "voltios": 31.7,
+   "hex": 155
+  },
+  {
+   "voltios": 31.9,
+   "hex": 156
+  },
+  {
+   "voltios": 32.1,
+   "hex": 157
+  },
+  {
+   "voltios": 32.3,
+   "hex": 158
+  },
+  {
+   "voltios": 32.5,
+   "hex": 159
+  },
+  {
+   "voltios": 32.7,
+   "hex": 160
+  },
+  {
+   "voltios": 32.9,
+   "hex": 161
+  },
+  {
+   "voltios": 33.1,
+   "hex": 162
+  },
+  {
+   "voltios": 33.3,
+   "hex": 163
+  },
+  {
+   "voltios": 33.5,
+   "hex": 164
+  },
+  {
+   "voltios": 33.7,
+   "hex": 165
+  },
+  {
+   "voltios": 33.9,
+   "hex": 166
+  },
+  {
+   "voltios": 34.1,
+   "hex": 167
+  },
+  {
+   "voltios": 34.3,
+   "hex": 168
+  },
+  {
+   "voltios": 34.5,
+   "hex": 169
+  },
+  {
+   "voltios": 34.7,
+   "hex": 170
+  },
+  {
+   "voltios": 34.9,
+   "hex": 171
+  },
+  {
+   "voltios": 35.1,
+   "hex": 172
+  },
+  {
+   "voltios": 35.3,
+   "hex": 173
+  },
+  {
+   "voltios": 35.5,
+   "hex": 174
+  },
+  {
+   "voltios": 35.7,
+   "hex": 175
+  },
+  {
+   "voltios": 35.9,
+   "hex": 176
+  },
+  {
+   "voltios": 36.1,
+   "hex": 177
+  },
+  {
+   "voltios": 36.3,
+   "hex": 178
+  },
+  {
+   "voltios": 36.5,
+   "hex": 179
+  },
+  {
+   "voltios": 36.7,
+   "hex": 180
+  },
+  {
+   "voltios": 36.9,
+   "hex": 181
+  },
+  {
+   "voltios": 37.1,
+   "hex": 182
+  },
+  {
+   "voltios": 37.3,
+   "hex": 183
+  },
+  {
+   "voltios": 37.5,
+   "hex": 184
+  },
+  {
+   "voltios": 37.7,
+   "hex": 185
+  },
+  {
+   "voltios": 37.9,
+   "hex": 186
+  },
+  {
+   "voltios": 38.1,
+   "hex": 187
+  },
+  {
+   "voltios": 38.3,
+   "hex": 188
+  },
+  {
+   "voltios": 38.5,
+   "hex": 189
+  },
+  {
+   "voltios": 38.7,
+   "hex": 190
+  },
+  {
+   "voltios": 38.9,
+   "hex": 191
+  },
+  {
+   "voltios": 39.1,
+   "hex": 192
+  },
+  {
+   "voltios": 39.3,
+   "hex": 193
+  },
+  {
+   "voltios": 39.5,
+   "hex": 194
+  },
+  {
+   "voltios": 39.7,
+   "hex": 195
+  },
+  {
+   "voltios": 39.9,
+   "hex": 196
+  },
+  {
+   "voltios": 40.0,
+   "hex": 197
+  }
+ ],
+ "tabla_vgl_samsung": [
+  {
+   "voltios": -5.1,
+   "hex": 24
+  },
+  {
+   "voltios": -5.3,
+   "hex": 25
+  },
+  {
+   "voltios": -5.4,
+   "hex": 26
+  },
+  {
+   "voltios": -5.6,
+   "hex": 27
+  },
+  {
+   "voltios": -5.8,
+   "hex": 28
+  },
+  {
+   "voltios": -6.0,
+   "hex": 29
+  },
+  {
+   "voltios": -6.2,
+   "hex": 30
+  },
+  {
+   "voltios": -6.4,
+   "hex": 31
+  },
+  {
+   "voltios": -6.6,
+   "hex": 32
+  },
+  {
+   "voltios": -6.8,
+   "hex": 33
+  },
+  {
+   "voltios": -7.0,
+   "hex": 34
+  },
+  {
+   "voltios": -7.2,
+   "hex": 35
+  },
+  {
+   "voltios": -7.4,
+   "hex": 36
+  },
+  {
+   "voltios": -7.6,
+   "hex": 37
+  },
+  {
+   "voltios": -7.8,
+   "hex": 38
+  },
+  {
+   "voltios": -8.0,
+   "hex": 39
+  },
+  {
+   "voltios": -8.2,
+   "hex": 40
+  },
+  {
+   "voltios": -8.4,
+   "hex": 41
+  },
+  {
+   "voltios": -8.6,
+   "hex": 42
+  },
+  {
+   "voltios": -8.8,
+   "hex": 43
+  },
+  {
+   "voltios": -9.0,
+   "hex": 44
+  },
+  {
+   "voltios": -9.2,
+   "hex": 45
+  },
+  {
+   "voltios": -9.4,
+   "hex": 46
+  },
+  {
+   "voltios": -9.6,
+   "hex": 47
+  },
+  {
+   "voltios": -9.8,
+   "hex": 48
+  },
+  {
+   "voltios": -10.0,
+   "hex": 49
+  },
+  {
+   "voltios": -10.2,
+   "hex": 50
+  },
+  {
+   "voltios": -10.4,
+   "hex": 51
+  },
+  {
+   "voltios": -10.6,
+   "hex": 52
+  },
+  {
+   "voltios": -10.8,
+   "hex": 53
+  },
+  {
+   "voltios": -11.0,
+   "hex": 54
+  },
+  {
+   "voltios": -11.2,
+   "hex": 55
+  },
+  {
+   "voltios": -11.4,
+   "hex": 56
+  },
+  {
+   "voltios": -11.6,
+   "hex": 57
+  },
+  {
+   "voltios": -11.7,
+   "hex": 58
+  },
+  {
+   "voltios": -11.8,
+   "hex": 59
+  },
+  {
+   "voltios": -11.9,
+   "hex": 60
+  },
+  {
+   "voltios": -12.0,
+   "hex": 61
+  },
+  {
+   "voltios": -12.1,
+   "hex": 62
+  },
+  {
+   "voltios": -12.2,
+   "hex": 63
+  },
+  {
+   "voltios": -12.4,
+   "hex": 64
+  },
+  {
+   "voltios": -12.6,
+   "hex": 65
+  },
+  {
+   "voltios": -12.8,
+   "hex": 66
+  },
+  {
+   "voltios": -13.0,
+   "hex": 67
+  },
+  {
+   "voltios": -13.2,
+   "hex": 68
+  },
+  {
+   "voltios": -13.4,
+   "hex": 69
+  },
+  {
+   "voltios": -13.6,
+   "hex": 70
+  },
+  {
+   "voltios": -13.8,
+   "hex": 71
+  },
+  {
+   "voltios": -14.0,
+   "hex": 72
+  },
+  {
+   "voltios": -14.2,
+   "hex": 73
+  },
+  {
+   "voltios": -14.4,
+   "hex": 74
+  },
+  {
+   "voltios": -14.6,
+   "hex": 75
+  },
+  {
+   "voltios": -14.8,
+   "hex": 76
+  },
+  {
+   "voltios": -15.0,
+   "hex": 77
+  },
+  {
+   "voltios": -15.2,
+   "hex": 78
+  },
+  {
+   "voltios": -15.4,
+   "hex": 79
+  },
+  {
+   "voltios": -15.6,
+   "hex": 80
+  },
+  {
+   "voltios": -15.8,
+   "hex": 81
+  },
+  {
+   "voltios": -16.0,
+   "hex": 82
+  },
+  {
+   "voltios": -16.2,
+   "hex": 83
+  },
+  {
+   "voltios": -16.4,
+   "hex": 84
+  },
+  {
+   "voltios": -16.6,
+   "hex": 85
+  },
+  {
+   "voltios": -16.8,
+   "hex": 86
+  },
+  {
+   "voltios": -17.0,
+   "hex": 87
+  },
+  {
+   "voltios": -17.2,
+   "hex": 88
+  },
+  {
+   "voltios": -17.4,
+   "hex": 89
+  },
+  {
+   "voltios": -17.6,
+   "hex": 90
+  },
+  {
+   "voltios": -17.8,
+   "hex": 91
+  },
+  {
+   "voltios": -18.0,
+   "hex": 92
+  },
+  {
+   "voltios": -18.2,
+   "hex": 93
+  },
+  {
+   "voltios": -18.4,
+   "hex": 94
+  },
+  {
+   "voltios": -18.6,
+   "hex": 95
+  },
+  {
+   "voltios": -18.8,
+   "hex": 96
+  },
+  {
+   "voltios": -19.0,
+   "hex": 97
+  },
+  {
+   "voltios": -19.2,
+   "hex": 98
+  },
+  {
+   "voltios": -19.4,
+   "hex": 99
+  },
+  {
+   "voltios": -19.6,
+   "hex": 100
+  },
+  {
+   "voltios": -19.8,
+   "hex": 101
+  },
+  {
+   "voltios": -20.0,
+   "hex": 102
+  }
+ ],
+ "modelos": [
+  {
+   "modelo": "KQ50QA65A",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "KU55UA8090",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QE50Q69T",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QA55Q60A",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "KQ55QA80A",
+   "base_main": 268112,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QE50Q60",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QN50Q60",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QN55Q60TAP",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QE43Q64BAU",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN55Q60CAK",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN65QN80",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "QA65Q80",
+   "base_main": 268112,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QN55Q80AAG",
+   "base_main": 268112,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QE65Q6F",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "QA55Q60AA",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN65Q60BAG",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QE50Q65",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN55Q60BAKXZL",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN55Q65BAKXZL",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN65Q60RAP-OPC1",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 4,
+   "checksum": false
+  },
+  {
+   "modelo": "QN65Q60RAP-OPC2",
+   "base_main": 857936,
+   "vgh_pos": 14,
+   "vgl_pos": 12,
+   "checksum": false
+  },
+  {
+   "modelo": "QN43Q60BAAK",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN50Q60AAG",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN55Q60AAG",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN55Q70AAG",
+   "base_main": 268112,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QN65Q60RAFXZA",
+   "base_main": 857936,
+   "vgh_pos": 14,
+   "vgl_pos": 12,
+   "checksum": false
+  },
+  {
+   "modelo": "QN75Q60RAFXZA",
+   "base_main": 857936,
+   "vgh_pos": 14,
+   "vgl_pos": 12,
+   "checksum": false
+  },
+  {
+   "modelo": "QN70Q65DAK",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "QN85Q70AAGCZB",
+   "base_main": 268112,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "QN82Q80",
+   "base_main": 857936,
+   "vgh_pos": 14,
+   "vgl_pos": 12,
+   "checksum": false
+  },
+  {
+   "modelo": "UN40TU8000",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50TU8000KXZL",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50TU8000PXPA",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55TU8000",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55TU8500",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN58TU8000",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN65TU8300",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN75TU8000",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UE55TU8506",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UE55TU8070",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UE43TU8005",
+   "base_main": 726864,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN43TU7000G_43_7000",
+   "base_main": 978944,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "UE55TU7125K-OPC1",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UE55TU7125K-OPC2",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN43TU7000F",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN43TU7000P",
+   "base_main": 978944,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 978976,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN43TU7000G",
+   "base_main": 978944,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 978976,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN50TU7000",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN55TU6900",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN58TU7000k",
+   "base_main": 978944,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 978976,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN58TU7020G",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN65TU6900PXPA",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN65TU7000K",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN65TU7020G",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN70TU7000K",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN70TU7100PXPA",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN70TU7100GX",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN70TU7000G",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN43RU7100",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 5,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50RU7100",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 5,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55RU7300",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 5,
+   "checksum": false
+  },
+  {
+   "modelo": "UN58RU7100",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 5,
+   "checksum": false
+  },
+  {
+   "modelo": "UN65RU7100",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 5,
+   "checksum": false
+  },
+  {
+   "modelo": "UN70RU7100",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 5,
+   "checksum": false
+  },
+  {
+   "modelo": "UN75RU8000 OPC1",
+   "base_main": 726864,
+   "vgh_pos": 6,
+   "vgl_pos": 4,
+   "checksum": false
+  },
+  {
+   "modelo": "UN75RU8000 OPC2",
+   "base_main": 857936,
+   "vgh_pos": 14,
+   "vgl_pos": 12,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55NU8000",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50NU7095",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55NU7095",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55NU7090",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN65NU7090",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55NU6900",
+   "base_main": 847872,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UE55NU7093",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50NU7100K",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50NU7400",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UE43NU7475U",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UE65NU7105K",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN43NU7100KXZL",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UE40NU7125K",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UE43NU7125K",
+   "base_main": 847872,
+   "vgh_pos": 8,
+   "vgl_pos": 15,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55NU7300",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55NU7100",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN58NU7100",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN65NU8500",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN75NU7100",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN75NU8000",
+   "base_main": 726416,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "HG50ET690UBXEN",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "HG50NT690UF",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "HG55NT690UF",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UE55MU6100",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN49MU6103",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55MU6103",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50MU6100",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN65MU6103",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55MU6290",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UE55MU6655",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55MU7500",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN58MU6120",
+   "base_main": 791952,
+   "vgh_pos": 10,
+   "vgl_pos": 8,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55U8200",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "UN43DU7000",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "UN43DU7700G",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55DU8200K",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50DU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN50DU7700",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 455008,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN55DU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN55DU7700G",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN65DU7000",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "UN65DU7700",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "KU50AU7050",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN43AU7000-30V",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN43AU7700",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN50AU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN50AU7700",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN43AU8000",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50AU8000",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55AU8000",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "UN60AU8000",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "UN75AU8000",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "UE50AU8070",
+   "base_main": 267600,
+   "vgh_pos": 4,
+   "vgl_pos": 11,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50AU7700-BRASIL",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "UN55AU7000-Colombia",
+   "base_main": 454656,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50AU7700G-BRASIL",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN55AU7700-30V",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN55AU7000-CostaRica_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UE55AU7105",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UE65AU7105K",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN58AU7700",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN58AU7000K",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN58AU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN60AU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN60AU7700K",
+   "base_main": 847872,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 847904,
+   "vgh_chk_pos": 4,
+   "vgl_chk_pos": 5
+  },
+  {
+   "modelo": "UN65AU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN65AU7700",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN70AU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN75AU7700G",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN43CU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN43CU7700",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN50CU8000",
+   "base_main": 415408,
+   "vgh_pos": 2,
+   "vgl_pos": 3,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50CU8200",
+   "base_main": 415408,
+   "vgh_pos": 2,
+   "vgl_pos": 3,
+   "checksum": false
+  },
+  {
+   "modelo": "UN50CU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN55CU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN58CU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN65CU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN65CU7700",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN70CU7000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN70CU7700G",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN65U8000",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN50BU8200-30V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN50BU8200-25V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN50BU8000-30V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN50BU8000-25V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN55BU8000-25V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "UN55BU8000-30V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN60BU8000-30V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 11
+  },
+  {
+   "modelo": "UN60BU8000-25V_C",
+   "base_main": 323584,
+   "vgh_pos": 13,
+   "vgl_pos": 14,
+   "checksum": true,
+   "base_check": 323936,
+   "vgh_chk_pos": 3,
+   "vgl_chk_pos": 4
+  },
+  {
+   "modelo": "CS601C TCOM ST4251B05-2C-1",
+   "base_main": 3840,
+   "vgh_pos": 8,
+   "vgl_pos": 6,
+   "checksum": false,
+   "tabla_vgh": [
+    {
+     "voltios": 20.0,
+     "hex": 0
+    },
+    {
+     "voltios": 21.0,
+     "hex": 1
+    },
+    {
+     "voltios": 22.0,
+     "hex": 2
+    },
+    {
+     "voltios": 23.0,
+     "hex": 3
+    },
+    {
+     "voltios": 24.0,
+     "hex": 4
+    },
+    {
+     "voltios": 25.0,
+     "hex": 5
+    },
+    {
+     "voltios": 26.0,
+     "hex": 6
+    },
+    {
+     "voltios": 27.0,
+     "hex": 7
+    },
+    {
+     "voltios": 28.0,
+     "hex": 8
+    },
+    {
+     "voltios": 29.0,
+     "hex": 9
+    },
+    {
+     "voltios": 30.0,
+     "hex": 10
+    }
+   ],
+   "tabla_vgl": [
+    {
+     "voltios": -4.5,
+     "hex": 0
+    },
+    {
+     "voltios": -5.0,
+     "hex": 1
+    },
+    {
+     "voltios": -5.5,
+     "hex": 2
+    },
+    {
+     "voltios": -6.0,
+     "hex": 3
+    },
+    {
+     "voltios": -6.5,
+     "hex": 4
+    },
+    {
+     "voltios": -7.0,
+     "hex": 5
+    },
+    {
+     "voltios": -7.5,
+     "hex": 6
+    },
+    {
+     "voltios": -8.0,
+     "hex": 7
+    },
+    {
+     "voltios": -8.5,
+     "hex": 8
+    },
+    {
+     "voltios": -9.0,
+     "hex": 9
+    },
+    {
+     "voltios": -9.5,
+     "hex": 10
+    },
+    {
+     "voltios": -10.0,
+     "hex": 11
+    }
+   ],
+   "i2c": true,
+   "i2c_addr": 80
+  }
+ ],
+ "firmas_autodeteccion": [
+  {
+   "modelo": "UN58AU7000K",
+   "len": 16,
+   "patron": [
+    2,
+    93,
+    174,
+    2,
+    109,
+    65,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    109,
+    126,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN43AU7700",
+   "len": 16,
+   "patron": [
+    2,
+    94,
+    30,
+    2,
+    111,
+    129,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    111,
+    190,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN43DU7000",
+   "len": 16,
+   "patron": [
+    2,
+    91,
+    147,
+    2,
+    109,
+    142,
+    120,
+    96,
+    230,
+    255,
+    34,
+    2,
+    109,
+    203,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UE65AU7105K",
+   "len": 16,
+   "patron": [
+    2,
+    94,
+    30,
+    2,
+    111,
+    209,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    112,
+    14,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN50MU6100",
+   "len": 16,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    2,
+    141,
+    0,
+    0,
+    2,
+    143
+   ]
+  },
+  {
+   "modelo": "QN65Q60RAF",
+   "len": 16,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    2,
+    245,
+    0,
+    0,
+    3,
+    209
+   ]
+  },
+  {
+   "modelo": "QN75Q60RAP",
+   "len": 16,
+   "patron": [
+    32,
+    0,
+    64,
+    0,
+    0,
+    0,
+    1,
+    129,
+    0,
+    1,
+    44,
+    149,
+    0,
+    1,
+    30,
+    93
+   ]
+  },
+  {
+   "modelo": "UN55CU7000",
+   "len": 16,
+   "patron": [
+    2,
+    93,
+    216,
+    2,
+    111,
+    139,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    111,
+    200,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN50BU8000-25V",
+   "len": 16,
+   "patron": [
+    2,
+    100,
+    55,
+    2,
+    117,
+    130,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    117,
+    191,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN55BU8000-30V",
+   "len": 16,
+   "patron": [
+    2,
+    98,
+    254,
+    2,
+    114,
+    181,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    114,
+    242,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN50BU8000-30V",
+   "len": 16,
+   "patron": [
+    2,
+    100,
+    228,
+    2,
+    118,
+    41,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    118,
+    102,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN55AU7000-Colombia",
+   "len": 16,
+   "patron": [
+    2,
+    92,
+    66,
+    2,
+    107,
+    213,
+    120,
+    97,
+    230,
+    255,
+    34,
+    2,
+    108,
+    18,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN65U8000",
+   "len": 16,
+   "patron": [
+    2,
+    92,
+    41,
+    2,
+    110,
+    75,
+    120,
+    96,
+    230,
+    255,
+    34,
+    2,
+    110,
+    136,
+    0,
+    0
+   ]
+  },
+  {
+   "modelo": "UN65TU7000K",
+   "len": 16,
+   "patron": [
+    2,
+    92,
+    252,
+    2,
+    111,
+    44,
+    120,
+    139,
+    230,
+    255,
+    34,
+    2,
+    111,
+    105,
+    2,
+    109
+   ]
+  },
+  {
+   "modelo": "UN70TU7000K",
+   "len": 16,
+   "patron": [
+    2,
+    97,
+    203,
+    2,
+    115,
+    157,
+    120,
+    115,
+    230,
+    255,
+    34,
+    2,
+    115,
+    218,
+    2,
+    114
+   ]
+  },
+  {
+   "modelo": "UN65RU7100",
+   "len": 16,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    2,
+    189,
+    0,
+    0,
+    3,
+    153
+   ]
+  },
+  {
+   "modelo": "UN43NU7125K",
+   "len": 16,
+   "patron": [
+    2,
+    33,
+    220,
+    2,
+    45,
+    222,
+    120,
+    44,
+    230,
+    255,
+    34,
+    2,
+    46,
+    27,
+    2,
+    44
+   ]
+  },
+  {
+   "modelo": "UN50NU7100K",
+   "len": 16,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    2,
+    189,
+    0,
+    0,
+    3,
+    213
+   ]
+  },
+  {
+   "modelo": "UN50NU7095",
+   "len": 16,
+   "patron": [
+    32,
+    35,
+    26,
+    2,
+    46,
+    169,
+    120,
+    54,
+    230,
+    255,
+    34,
+    2,
+    46,
+    230,
+    2,
+    45
+   ]
+  },
+  {
+   "modelo": "UN58AU7700",
+   "len": 32,
+   "patron": [
+    2,
+    92,
+    66,
+    2,
+    107,
+    213,
+    120,
+    97,
+    230,
+    255,
+    34,
+    2,
+    108,
+    18,
+    0,
+    0,
+    0,
+    0,
+    50,
+    2,
+    108,
+    79,
+    2,
+    106,
+    4,
+    50,
+    50,
+    2,
+    108,
+    140,
+    50,
+    50
+   ]
+  },
+  {
+   "modelo": "QN55Q60CAK",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    190,
+    189
+   ]
+  },
+  {
+   "modelo": "UN55BU8000-25V",
+   "len": 64,
+   "patron": [
+    2,
+    92,
+    66,
+    2,
+    107,
+    213,
+    120,
+    97,
+    230,
+    255,
+    34,
+    2,
+    108,
+    18,
+    0,
+    0,
+    0,
+    0,
+    50,
+    2,
+    108,
+    79,
+    2,
+    106,
+    4,
+    50,
+    50,
+    2,
+    108,
+    140,
+    50,
+    50,
+    50,
+    50,
+    34,
+    2,
+    116,
+    21,
+    34,
+    34,
+    255,
+    255,
+    255,
+    2,
+    115,
+    131,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    18,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    25,
+    255,
+    255
+   ]
+  },
+  {
+   "modelo": "UN50AU7700-30V",
+   "len": 64,
+   "patron": [
+    2,
+    93,
+    174,
+    2,
+    109,
+    65,
+    120,
+    95,
+    230,
+    255,
+    34,
+    2,
+    109,
+    126,
+    0,
+    0,
+    0,
+    0,
+    50,
+    2,
+    109,
+    187,
+    2,
+    107,
+    112,
+    50,
+    50,
+    2,
+    109,
+    248,
+    50,
+    50,
+    50,
+    50,
+    34,
+    2,
+    117,
+    207,
+    34,
+    34,
+    255,
+    255,
+    255,
+    2,
+    117,
+    61,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    18,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    25,
+    255,
+    255
+   ]
+  },
+  {
+   "modelo": "UN50AU8000",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    183,
+    77
+   ]
+  },
+  {
+   "modelo": "UN43TU7000G",
+   "len": 64,
+   "patron": [
+    2,
+    97,
+    203,
+    2,
+    115,
+    157,
+    120,
+    115,
+    230,
+    255,
+    34,
+    2,
+    115,
+    218,
+    2,
+    114,
+    255,
+    255,
+    255,
+    2,
+    113,
+    45,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    124,
+    156,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    17,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    18,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    17,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    18,
+    255,
+    255
+   ]
+  },
+  {
+   "modelo": "UN60AU8000",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    185,
+    49
+   ]
+  },
+  {
+   "modelo": "QN65Q60BAG",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    188,
+    93
+   ]
+  },
+  {
+   "modelo": "QN70Q65DAK",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    191,
+    1
+   ]
+  },
+  {
+   "modelo": "KQ55QA80A",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    204,
+    225
+   ]
+  },
+  {
+   "modelo": "UN55AU7700",
+   "len": 64,
+   "patron": [
+    2,
+    91,
+    147,
+    2,
+    109,
+    142,
+    120,
+    96,
+    230,
+    255,
+    34,
+    2,
+    109,
+    203,
+    0,
+    0,
+    0,
+    0,
+    50,
+    2,
+    109,
+    8,
+    0,
+    0,
+    2,
+    0,
+    50,
+    2,
+    110,
+    69,
+    2,
+    106,
+    34,
+    50,
+    50,
+    2,
+    118,
+    250,
+    50,
+    50,
+    50,
+    34,
+    34,
+    2,
+    118,
+    104,
+    34,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    18,
+    255,
+    255,
+    255,
+    255,
+    255,
+    2,
+    0,
+    26,
+    255,
+    255
+   ]
+  },
+  {
+   "modelo": "UN50TU8000KXZL",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    152,
+    241
+   ]
+  },
+  {
+   "modelo": "UN50TU8000PXPA",
+   "len": 64,
+   "patron": [
+    32,
+    0,
+    63,
+    240,
+    0,
+    0,
+    0,
+    193,
+    0,
+    0,
+    3,
+    17,
+    0,
+    0,
+    3,
+    241,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    35,
+    0,
+    0,
+    152,
+    113
+   ]
+  }
+ ]
+}

@@ -1,0 +1,981 @@
+{
+ "pmic_isp": [
+  {
+   "pmic": "P303-31",
+   "fabricante": "Generic",
+   "modelo": "P303-31",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6937",
+   "fabricante": "Richtek",
+   "modelo": "RT6937",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x05",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SY7634",
+   "fabricante": "Silergy",
+   "modelo": "SY7634",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4054D",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4054D",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6903A",
+   "fabricante": "Richtek",
+   "modelo": "RT6903A",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x05",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "81110",
+   "fabricante": "Generic",
+   "modelo": "81110",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6919C",
+   "fabricante": "Richtek",
+   "modelo": "RT6919C",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "TPS65175A",
+   "fabricante": "TI",
+   "modelo": "TPS65175A",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "HX2510",
+   "fabricante": "Himax",
+   "modelo": "HX2510",
+   "i2c_addr": "0x40",
+   "reg_vgh": "0x30",
+   "reg_vgl": "0x31",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4186_21",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4186 (0x21)",
+   "i2c_addr": "0x21",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x05",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SW5094A",
+   "fabricante": "Generic",
+   "modelo": "SW5094A",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SW5243A",
+   "fabricante": "Generic",
+   "modelo": "SW5243A",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x05",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "CM508",
+   "fabricante": "Generic",
+   "modelo": "CM508",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "C5567S",
+   "fabricante": "Generic",
+   "modelo": "C5567S",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SW50B3A",
+   "fabricante": "Generic",
+   "modelo": "SW50B3A",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x05",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4053C",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4053C",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4085",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4085",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x05",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "LG_SW50224",
+   "fabricante": "LG",
+   "modelo": "SW50224",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "IML8973",
+   "fabricante": "iML",
+   "modelo": "IML8973",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "HA15291",
+   "fabricante": "Generic",
+   "modelo": "HA15291",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4057",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4057",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "TPS65178",
+   "fabricante": "TI",
+   "modelo": "TPS65178",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x05",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "KD5567S",
+   "fabricante": "Generic",
+   "modelo": "KD5567S",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "G2510",
+   "fabricante": "Generic",
+   "modelo": "G2510",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "2510S",
+   "fabricante": "Generic",
+   "modelo": "2510S",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "LP6288",
+   "fabricante": "Leadtrend",
+   "modelo": "LP6288",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6923",
+   "fabricante": "Richtek",
+   "modelo": "RT6923",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "NT50660S",
+   "fabricante": "Novatek",
+   "modelo": "NT50660S",
+   "i2c_addr": "0x3E",
+   "reg_vgh": "0x20",
+   "reg_vgl": "0x21",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "LEMP21",
+   "fabricante": "Generic",
+   "modelo": "LEMP21",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6950",
+   "fabricante": "Richtek",
+   "modelo": "RT6950",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x05",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "NT50330P",
+   "fabricante": "Novatek",
+   "modelo": "NT50330P",
+   "i2c_addr": "0x3E",
+   "reg_vgh": "0x10",
+   "reg_vgl": "0x11",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SW50222",
+   "fabricante": "Generic",
+   "modelo": "SW50222",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "P303-19",
+   "fabricante": "Generic",
+   "modelo": "P303-19",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "P303-21",
+   "fabricante": "Generic",
+   "modelo": "P303-21",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6943",
+   "fabricante": "Richtek",
+   "modelo": "RT6943",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6914",
+   "fabricante": "Richtek",
+   "modelo": "RT6914",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "LEMP20",
+   "fabricante": "Generic",
+   "modelo": "LEMP20",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4080",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4080",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x06",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SW5084A",
+   "fabricante": "Generic",
+   "modelo": "SW5084A",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "ANX6862",
+   "fabricante": "Analogix",
+   "modelo": "ANX6862",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4053",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4053",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "IML8940",
+   "fabricante": "iML",
+   "modelo": "IML8940",
+   "i2c_addr": "0x3A",
+   "reg_vgh": "0x14",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "P303-2V",
+   "fabricante": "Generic",
+   "modelo": "P303-2V",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "NT50330S",
+   "fabricante": "Novatek",
+   "modelo": "NT50330S",
+   "i2c_addr": "0x3E",
+   "reg_vgh": "0x10",
+   "reg_vgl": "0x11",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SW50212",
+   "fabricante": "Generic",
+   "modelo": "SW50212",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x04",
+   "reg_vgl": "0x05",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "TPS65177",
+   "fabricante": "TI",
+   "modelo": "TPS65177",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x08",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "TPS65175",
+   "fabricante": "TI",
+   "modelo": "TPS65175",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x04",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "RT6925",
+   "fabricante": "Richtek",
+   "modelo": "RT6925",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x0A",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "VPMS2SM",
+   "fabricante": "Samsung",
+   "modelo": "VPMS2SM",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x0A",
+   "reg_vgl": "0x0B",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SM4186_20",
+   "fabricante": "Silicon Mitus",
+   "modelo": "SM4186 (0x20)",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x05",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "P303-11",
+   "fabricante": "Generic",
+   "modelo": "P303-11",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "CS603",
+   "fabricante": "Generic",
+   "modelo": "CS603",
+   "i2c_addr": "0x36",
+   "reg_vgh": "0x0C",
+   "reg_vgl": "0x0D",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "LP6281",
+   "fabricante": "Leadtrend",
+   "modelo": "LP6281",
+   "i2c_addr": "0x20",
+   "reg_vgh": "0x03",
+   "reg_vgl": "0x05",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "G2731",
+   "fabricante": "Generic",
+   "modelo": "G2731",
+   "i2c_addr": "0x70",
+   "reg_vgh": "0x13",
+   "reg_vgl": "0x15",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  },
+  {
+   "pmic": "SG2510",
+   "fabricante": "Silergy",
+   "modelo": "SG2510",
+   "i2c_addr": "0x40",
+   "reg_vgh": "0x30",
+   "reg_vgl": "0x31",
+   "rango_vgh": "17.0V a 40.0V",
+   "rango_vgl": "-15.5V a -5.5V"
+  }
+ ],
+ "pinout_i2c": [
+  {
+   "referencia": "AAT1218",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "AUO-G1422.29",
+   "scl": "Pin 14",
+   "sda": "Pin 15"
+  },
+  {
+   "referencia": "AUOG1422.2H",
+   "scl": "Pin 14",
+   "sda": "Pin 15"
+  },
+  {
+   "referencia": "B601-1CR",
+   "scl": "Pin 14",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "B601-1N",
+   "scl": "Pin 14",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "B601-1S",
+   "scl": "Pin 14",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "B601-2C",
+   "scl": "Pin 14",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "BOE/60001",
+   "scl": "Pin 7",
+   "sda": "Pin 6"
+  },
+  {
+   "referencia": "BOE60001",
+   "scl": "Pin 18",
+   "sda": "Pin 7"
+  },
+  {
+   "referencia": "BSFXXX",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "BUF08630",
+   "scl": "Pin 20",
+   "sda": "Pin 1"
+  },
+  {
+   "referencia": "BUF08821",
+   "scl": "Pin 9",
+   "sda": "Pin 10"
+  },
+  {
+   "referencia": "BUF08832",
+   "scl": "Pin 9",
+   "sda": "Pin 10"
+  },
+  {
+   "referencia": "BUF16821",
+   "scl": "Pin 14",
+   "sda": "Pin 15"
+  },
+  {
+   "referencia": "BUF22821",
+   "scl": "Pin 18",
+   "sda": "Pin 19"
+  },
+  {
+   "referencia": "BUF8821B",
+   "scl": "Pin 9",
+   "sda": "Pin 10"
+  },
+  {
+   "referencia": "CM601",
+   "scl": "Pin 3",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "CM602",
+   "scl": "Pin 3",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "CXKXXX",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "DS3501",
+   "scl": "Pin 10",
+   "sda": "Pin 1"
+  },
+  {
+   "referencia": "G2510",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "G2531",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "G2532",
+   "scl": "Pin 12",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "G2532P",
+   "scl": "Pin 12",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "G2533",
+   "scl": "Pin 7",
+   "sda": "Pin 6"
+  },
+  {
+   "referencia": "G2562",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "G2731",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "G2732T",
+   "scl": "Pin 12",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "G2733",
+   "scl": "Pin 7",
+   "sda": "Pin 6"
+  },
+  {
+   "referencia": "G2734P",
+   "scl": "Pin 11",
+   "sda": "Pin 12"
+  },
+  {
+   "referencia": "HA12591",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "HA523A",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "HA5B20",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "HX2510",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "HX556S",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "IM8943",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "IML8940",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "LP6228",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "LP6281",
+   "scl": "Pin 12",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "MAX9668",
+   "scl": "Pin 20",
+   "sda": "Pin 1"
+  },
+  {
+   "referencia": "MAX9669",
+   "scl": "Pin 2",
+   "sda": "Pin 3"
+  },
+  {
+   "referencia": "MAX9672",
+   "scl": "Pin 2",
+   "sda": "Pin 3"
+  },
+  {
+   "referencia": "MAX9673",
+   "scl": "Pin 2",
+   "sda": "Pin 3"
+  },
+  {
+   "referencia": "MAX9674",
+   "scl": "Pin 2",
+   "sda": "Pin 3"
+  },
+  {
+   "referencia": "MAX9679",
+   "scl": "Pin 3",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "MAX9696",
+   "scl": "Pin 2",
+   "sda": "Pin 3"
+  },
+  {
+   "referencia": "NT50330S",
+   "scl": "Pin 5",
+   "sda": "Pin 4"
+  },
+  {
+   "referencia": "NT50331",
+   "scl": "Pin 14",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "NT50660S",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "P303-19",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "P303-2V",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "P303-31",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "RT5963",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "RT6919C",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "RT6923",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "RT6925A",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "RT6937",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "RT6943A",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "RT6950",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "RT6958",
+   "scl": "Pin 7",
+   "sda": "Pin 6"
+  },
+  {
+   "referencia": "RT6970",
+   "scl": "Pin 15",
+   "sda": "Pin 16"
+  },
+  {
+   "referencia": "SM405",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SM4051",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SM4051D",
+   "scl": "Pin 20",
+   "sda": "Pin 21"
+  },
+  {
+   "referencia": "SM4053B",
+   "scl": "Pin 20",
+   "sda": "Pin 21"
+  },
+  {
+   "referencia": "SM4054D",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SM4080",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SM4085",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SM4809",
+   "scl": "Pin 12",
+   "sda": "Pin 13"
+  },
+  {
+   "referencia": "SW50212",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SW50222",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SW5084A",
+   "scl": "Pin 20",
+   "sda": "Pin 21"
+  },
+  {
+   "referencia": "SW5094A",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SW50B3A",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SW50B4A",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SW5243A",
+   "scl": "Pin 16",
+   "sda": "Pin 17"
+  },
+  {
+   "referencia": "SY634",
+   "scl": "Pin 32",
+   "sda": "Pin 33"
+  },
+  {
+   "referencia": "TPS 65178",
+   "scl": "Pin 27",
+   "sda": "Pin 28"
+  },
+  {
+   "referencia": "TPS65168",
+   "scl": "Pin 6",
+   "sda": "Pin 8"
+  },
+  {
+   "referencia": "TPS65175",
+   "scl": "Pin 20",
+   "sda": "Pin 21"
+  },
+  {
+   "referencia": "VPMS2SM",
+   "scl": "Pin 24",
+   "sda": "Pin 25"
+  },
+  {
+   "referencia": "VMPS3GMB",
+   "scl": "Pin 24",
+   "sda": "Pin 25"
+  },
+  {
+   "referencia": "VMPM2SM",
+   "scl": "Pin 24",
+   "sda": "Pin 25"
+  },
+  {
+   "referencia": "VPMS3BRT",
+   "scl": "Pin 24",
+   "sda": "Pin 25"
+  },
+  {
+   "referencia": "VPM1RT",
+   "scl": "Pin 26",
+   "sda": "Pin 27"
+  }
+ ]
+}

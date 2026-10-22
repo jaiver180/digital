@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CH341A (I2C/SPI) y CH340 -->
+    <usb-device vendor-id="6790" product-id="21778" />
+    <usb-device vendor-id="6790" product-id="21795" />
+    <usb-device vendor-id="6790" product-id="29987" />
+    <!-- CP210x, FTDI, PL2303 -->
+    <usb-device vendor-id="4292" />
+    <usb-device vendor-id="1027" />
+    <usb-device vendor-id="1659" />
+</resources>

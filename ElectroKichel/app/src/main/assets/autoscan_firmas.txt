@@ -1,0 +1,2 @@
+# Firmas de referencia ElectroKichel
+# Formato: CLAVE_GRUPO;MODELO;HEX_BLOQUE_16_BYTES;HEX_2DA_COPIA_16_BYTES o -
